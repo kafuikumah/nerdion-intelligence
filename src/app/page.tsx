@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Database, BarChart3, Code2, Search, PenTool, Code, HeartHandshake } from "lucide-react";
 
 export default function Home() {
@@ -76,11 +77,29 @@ export default function Home() {
           <p className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] text-center mb-10">
             Trusted by organizations shaping the world
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 grayscale opacity-60">
-            {["MTN", "Eco Africa Network", "Ghana Water Company Limited", "Ministry of Sanitation and Water Resources", "AirtelTigo", "Lynx Entertainment"].map((org) => (
-              <span key={org} className="font-display text-xl text-text-primary tracking-tight">
-                {org}
-              </span>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+            {[
+              { name: "MTN", logo: "/logos/mtn_logo.png" },
+              { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
+              { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
+              { name: "CalBank", logo: "/logos/calbank_logo.png" },
+              { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
+            ].map((org) => (
+              <div key={org.name} className="flex items-center justify-center">
+                {org.logo ? (
+                  <Image 
+                    src={org.logo} 
+                    alt={`${org.name} logo`} 
+                    width={120} 
+                    height={60} 
+                    className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  />
+                ) : (
+                  <span className="font-display text-xl text-text-primary tracking-tight grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default">
+                    {org.name}
+                  </span>
+                )}
+              </div>
             ))}
           </div>
         </div>
