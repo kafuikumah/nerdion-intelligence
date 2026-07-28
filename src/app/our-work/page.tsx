@@ -4,23 +4,41 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const categories = ["All", "Enterprise Management Platforms", "Monitoring & Evaluation Systems", "Custom Digital Tools"];
+const categories = ["All", "Data Analytics", "Health", "Agriculture", "Sustainability & Climate", "Finance"];
 
 const caseStudies = [
     {
         client: "Leading Multilateral Organization",
         title: "Global Humanitarian Early Warning System",
         description: "A multi-country platform consolidating 14 real-time data feeds to provide actionable early warnings 4–6 weeks ahead of crises.",
-        category: "Enterprise Management Platforms",
+        category: "Data Analytics",
         outcome: "4–6wk early lead time",
         href: "/case-study/early-warning-system",
         featured: true
     },
     {
+        client: "African Union Commission (AUC)",
+        title: "African Debt Monitoring Mechanism (ADMM)",
+        description: "A continental reference registry for public finance macro-surveillance and risk early warning of public external and domestic liabilities across 55 Member States.",
+        category: "Finance",
+        outcome: "Macro surveillance registry",
+        href: "/case-study/admm",
+        featured: false
+    },
+    {
+        client: "African Renaissance Trust (ART)",
+        title: "Health Financing Insights Dashboard",
+        description: "Interactive analytics platform mapping domestic resources, benchmarking sovereign performances, and tracking ALM/Abuja declaration targets across 55 African nations.",
+        category: "Health",
+        outcome: "Sovereign benchmarking matrix",
+        href: "/case-study/health-financing-dashboard",
+        featured: false
+    },
+    {
         client: "Regional Intergovernmental Body",
         title: "Cross-Border MEAL Platform",
         description: "A centralized system for tracking 340+ developmental indicators across 15 member states in West Africa.",
-        category: "Monitoring & Evaluation Systems",
+        category: "Data Analytics",
         outcome: "70% faster reporting",
         href: "/case-study/regional-monitoring",
         featured: false
@@ -29,7 +47,7 @@ const caseStudies = [
         client: "Continental Development Finance Institution",
         title: "Strategic Investment Portfolio Tracker",
         description: "Comprehensive dashboard for tracking $2.4B in infrastructure and social investments across multiple regions.",
-        category: "Enterprise Management Platforms",
+        category: "Finance",
         outcome: "$2.4B portfolio tracked",
         href: "/case-study/portfolio-management",
         featured: false
@@ -38,7 +56,7 @@ const caseStudies = [
         client: "Major International NGO",
         title: "Digital Beneficiary Accountability Portal",
         description: "Closing the loop with 1.2M program participants via integrated SMS and web-based feedback mechanisms.",
-        category: "Custom Digital Tools",
+        category: "Data Analytics",
         outcome: "1.2M participants",
         href: "/case-study/beneficiary-feedback",
         featured: false
@@ -47,7 +65,7 @@ const caseStudies = [
         client: "Global Development Foundation",
         title: "Education Outcomes Tracking System",
         description: "Real-time monitoring of literacy programs and school attendance across 240 rural learning centers.",
-        category: "Monitoring & Evaluation Systems",
+        category: "Data Analytics",
         outcome: "240 schools tracked",
         href: "/case-study/education-tracking",
         featured: false
@@ -56,7 +74,7 @@ const caseStudies = [
         client: "Pan-African Development Agency",
         title: "Regional Infrastructure Reporting Tool",
         description: "Strategic project management and reporting tool for continental infrastructure development initiatives.",
-        category: "Custom Digital Tools",
+        category: "Data Analytics",
         outcome: "Continental rollout",
         href: "/case-study/infrastructure-reporting",
         featured: false

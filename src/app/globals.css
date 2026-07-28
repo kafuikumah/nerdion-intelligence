@@ -6,7 +6,7 @@
   --color-border-warm: #E4E0DA;
   --color-text-primary: #1A1F2E;
   --color-text-secondary: #6B7280;
-  --color-accent-green: #1A6B4A;
+  --color-accent-green: #0433D3;
   --color-accent-gold: #B8860B;
   --color-hover: #F0EDE8;
   --color-footer: #EDE9E3;
@@ -75,4 +75,24 @@ h4,
 
 .stagger-4 {
   animation-delay: 0.4s;
+}
+
+/* Continuous Logo Marquee (Left to Right) */
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 25s linear infinite;
+}
+
+.animate-marquee-ltr:hover {
+  animation-play-state: paused;
 }

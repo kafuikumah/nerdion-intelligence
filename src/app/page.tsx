@@ -1,6 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Database, BarChart3, Code2, Search, PenTool, Code, HeartHandshake } from "lucide-react";
+import { 
+  ArrowRight, 
+  Database, 
+  BarChart3, 
+  Code2, 
+  Search, 
+  PenTool, 
+  Code, 
+  HeartHandshake, 
+  Activity, 
+  Sprout, 
+  Globe, 
+  Coins, 
+  ShieldCheck, 
+  LineChart, 
+  LayoutDashboard, 
+  History, 
+  Layers 
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -13,10 +31,10 @@ export default function Home() {
               Accra · Manchester
             </p>
             <h1 className="font-display text-6xl lg:text-[88px] leading-[1.05] text-text-primary mb-8 tracking-tight">
-              Intelligence that drives global impact.
+              Technology built for African development.
             </h1>
             <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">
-              Nerdion Systems builds decision-support tools, monitoring platforms, and data systems that help international development organizations act on evidence — faster, at scale, and with confidence.
+              Nerdion Systems turns fragmented administrative, program, geospatial, and economic datasets into interoperable decision-support systems that support planning, implementation tracking, and evaluation.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -44,8 +62,8 @@ export default function Home() {
                 <path d="M50 250 Q130 150 210 200 T370 50" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
                 <circle cx="50" cy="250" r="4" fill="#B8860B" />
                 <circle cx="130" cy="180" r="4" fill="#B8860B" />
-                <circle cx="210" cy="195" r="4" fill="#1A6B4A" />
-                <circle cx="370" cy="50" r="4" fill="#1A6B4A" />
+                <circle cx="210" cy="195" r="4" fill="#0433D3" />
+                <circle cx="370" cy="50" r="4" fill="#0433D3" />
               </svg>
               <div className="absolute top-8 left-8 p-4 bg-white border border-border-warm shadow-sm">
                 <div className="w-12 h-1 bg-accent-green mb-2"></div>
@@ -54,106 +72,212 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Stats Bar */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 pt-12 border-t border-border-warm animate-in stagger-3">
-          {[
-            { value: "32+", label: "Projects Delivered" },
-            { value: "14+", label: "Organizations Served" },
-            { value: "4+", label: "Countries Reached" },
-            { value: "45+", label: "Combined Years of Practice" },
-          ].map((stat, idx) => (
-            <div key={idx} className={`text-center ${idx > 0 ? "lg:border-l border-border-warm" : ""}`}>
-              <p className="font-display text-4xl text-text-primary mb-2">{stat.value}</p>
-              <p className="text-xs text-text-secondary font-mono uppercase tracking-widest">{stat.label}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Trusted By Bar */}
       <section className="bg-footer py-16 border-y border-border-warm animate-in">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          <p className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] text-center mb-10">
+        <div className="max-w-[1440px] mx-auto">
+          <p className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] text-center mb-10 px-6">
             Trusted by organizations shaping the world
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-            {[
-              { name: "MTN", logo: "/logos/mtn_logo.png" },
-              { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
-              { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
-              { name: "CalBank", logo: "/logos/calbank_logo.png" },
-              { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
-            ].map((org) => (
-              <div key={org.name} className="flex items-center justify-center">
-                {org.logo ? (
-                  <Image 
-                    src={org.logo} 
-                    alt={`${org.name} logo`} 
-                    width={120} 
-                    height={60} 
-                    className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
-                  />
-                ) : (
-                  <span className="font-display text-xl text-text-primary tracking-tight grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default">
-                    {org.name}
-                  </span>
-                )}
+          
+          <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-footer before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-footer after:to-transparent">
+            <div className="flex animate-marquee-ltr gap-4 whitespace-nowrap">
+              {/* First Set of Logos */}
+              <div className="flex shrink-0 items-center justify-around gap-4 min-w-full">
+                {[
+                  { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
+                  { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
+                  { name: "MTN", logo: "/logos/mtn_logo.png" },
+                  { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
+                  { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
+                  { name: "CalBank", logo: "/logos/calbank_logo.png" },
+                  { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
+                ].map((org, index) => (
+                  <div key={`${org.name}-1-${index}`} className="flex items-center justify-center shrink-0">
+                    <Image 
+                      src={org.logo} 
+                      alt={`${org.name} logo`} 
+                      width={120} 
+                      height={60} 
+                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+
+              {/* Second Set of Logos (Duplicate for seamless loop) */}
+              <div className="flex shrink-0 items-center justify-around gap-4 min-w-full">
+                {[
+                  { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
+                  { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
+                  { name: "MTN", logo: "/logos/mtn_logo.png" },
+                  { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
+                  { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
+                  { name: "CalBank", logo: "/logos/calbank_logo.png" },
+                  { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
+                ].map((org, index) => (
+                  <div key={`${org.name}-2-${index}`} className="flex items-center justify-center shrink-0">
+                    <Image 
+                      src={org.logo} 
+                      alt={`${org.name} logo`} 
+                      width={120} 
+                      height={60} 
+                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
+      {/* Practice Areas Section */}
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="mb-20 animate-in">
-          <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4">What We Do</p>
+          <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Practice Areas</p>
           <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
-            Three practices. One mission.
+            Five practice areas. One unified data foundation.
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
-            We design and build the digital infrastructure that turns evidence into action for organizations working to create global impact.
+            We focus on turning fragmented administrative, programme, geospatial, economic and financial datasets into interoperable systems.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               num: "01",
               icon: Database,
-              title: "Enterprise Management Platforms",
-              text: "Building the backbone of institutional operations with integrated ERP and management systems.",
-              tags: ["Institutional", "Operations"]
+              title: "Data Analytics",
+              text: "Data engineering, interoperable data models, indicator systems, and automation of reporting workflows.",
+              tags: ["Data Modeling", "Pipelines", "BI"]
             },
             {
               num: "02",
-              icon: BarChart3,
-              title: "Monitoring & Evaluation Systems",
-              text: "Digital MEAL platforms that move organizations beyond spreadsheets to real-time outcome tracking.",
-              tags: ["MEAL", "Impact"]
+              icon: Activity,
+              title: "Health",
+              text: "Health financing analytics, expenditure tracking, health sector performance intelligence, and facility-level monitoring.",
+              tags: ["M&E", "Financing", "Expenditure"]
             },
             {
               num: "03",
-              icon: Code2,
-              title: "Custom Digital Tools",
-              text: "Bespoke internal systems built around your workflows — beneficiary portals, procurement trackers, and knowledge tools.",
-              tags: ["Workflow", "Custom"]
+              icon: Sprout,
+              title: "Agriculture",
+              text: "Programme targeting tools, farmer and value-chain delivery analytics, resilience risk, and geospatial intelligence.",
+              tags: ["Farmer Data", "Geospatial", "Risk"]
+            },
+            {
+              num: "04",
+              icon: Globe,
+              title: "Sustainability & Climate",
+              text: "NDC implementation tracking, MRV support, climate finance mapping, and geospatial exposure intelligence.",
+              tags: ["Climate Finance", "MRV", "NDC"]
+            },
+            {
+              num: "05",
+              icon: Coins,
+              title: "Finance",
+              text: "Public and development finance analytics, budget execution intelligence, investment pipeline, and financing scenarios.",
+              tags: ["Public Finance", "Budgets", "Investment"]
             },
           ].map((item, idx) => (
-            <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group animate-in" style={{ animationDelay: `${0.2 + idx * 0.1}s` }}>
-              <p className="font-mono text-[10px] text-text-secondary mb-8">{item.num}</p>
-              <item.icon className="w-10 h-10 text-accent-green mb-8" />
-              <h3 className="font-display text-2xl text-text-primary mb-4">{item.title}</h3>
-              <p className="text-sm text-text-secondary leading-relaxed mb-8">
-                {item.text}
-              </p>
+            <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group animate-in flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.1}s` }}>
+              <div>
+                <p className="font-mono text-[10px] text-text-secondary mb-8">{item.num}</p>
+                <item.icon className="w-10 h-10 text-accent-green mb-8 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-display text-2xl text-text-primary mb-4">{item.title}</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-8">
+                  {item.text}
+                </p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {item.tags.map(tag => (
                   <span key={tag} className="px-3 py-1 bg-background border border-border-warm text-[10px] font-mono text-text-secondary rounded-full">
                     {tag}
                   </span>
                 ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Delivery Model Section */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32 border-t border-border-warm animate-in">
+        <div className="mb-20">
+          <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Delivery Model</p>
+          <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
+            Data and systems as delivery infrastructure
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
+            Our delivery model treats data systems as critical administrative infrastructure, supporting programme tracking, governmental operational needs, and traceable donor reporting.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Governed Data Foundation",
+              icon: ShieldCheck,
+              bullets: [
+                "Automated ingestion pipelines & validation logic",
+                "Strict access controls & data classification schemas",
+                "Lawful processing pathways agreed with clients"
+              ]
+            },
+            {
+              title: "Decision-Ready Analytics",
+              icon: LineChart,
+              bullets: [
+                "Consistent core metrics and historical trend analysis",
+                "Interactive scenario-modeling and projection tools",
+                "Analytics explicitly tied to key project decisions"
+              ]
+            },
+            {
+              title: "Workflow-Integrated Tooling",
+              icon: LayoutDashboard,
+              bullets: [
+                "Dynamic dashboards and automated reporting packs",
+                "Low-bandwidth notifications and SMS alert systems",
+                "Custom tools built around actual operational workflows"
+              ]
+            },
+            {
+              title: "Auditability & Traceability",
+              icon: History,
+              bullets: [
+                "Complete data lineage mapping and source registers",
+                "Version-controlled codebases & reproducible datasets",
+                "Fully traceable assumptions and parameters throughout"
+              ]
+            },
+            {
+              title: "Capacity Transfer & Evolution",
+              icon: Layers,
+              bullets: [
+                "Comprehensive technical documentation and training",
+                "Transition frameworks and handover support plans",
+                "Systems built to operate beyond single project cycles"
+              ]
+            }
+          ].map((pillar, idx) => (
+            <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green hover:shadow-sm transition-all group flex flex-col justify-between" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <div>
+                <div className="shrink-0 w-12 h-12 bg-accent-green/5 flex items-center justify-center rounded-sm group-hover:bg-accent-green/10 transition-colors mb-8">
+                  <pillar.icon className="w-6 h-6 text-accent-green" />
+                </div>
+                <h3 className="font-display text-2xl text-text-primary mb-6">{pillar.title}</h3>
+                <ul className="space-y-4">
+                  {pillar.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} className="flex gap-3 text-sm text-text-secondary leading-relaxed items-start">
+                      <div className="w-1.5 h-1.5 bg-accent-green rounded-full mt-2 shrink-0" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
@@ -168,23 +292,24 @@ export default function Home() {
             <h2 className="font-display text-5xl lg:text-6xl mb-6">How we work</h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
             {[
-              { num: "01", title: "Discover", icon: Search, text: "Deep engagement to understand decision flows and organizational context." },
-              { num: "02", title: "Design", icon: PenTool, text: "Co-creating system architecture and user flows with program teams." },
-              { num: "03", title: "Build", icon: Code, text: "Iterative development with regular demos and security compliance." },
-              { num: "04", title: "Sustain", icon: HeartHandshake, text: "Training, documentation, and evolution as your needs grow." },
+              { num: "01", title: "Discovery", icon: Search, text: "Context analysis, stakeholder interviews, data landscape assessment, and problem definition." },
+              { num: "02", title: "Co-Design", icon: PenTool, text: "Collaborative definition of architecture, indicator frameworks, reporting, and governance model." },
+              { num: "03", title: "Prototype", icon: LayoutDashboard, text: "Rapid working prototype validated against real workflows and datasets before full development." },
+              { num: "04", title: "Build", icon: Code, text: "Structured engineering with iterative review cycles, QA, and client feedback loops throughout." },
+              { num: "05", title: "Deploy", icon: Layers, text: "Production deployment, data migration, integration testing, user acceptance, and go-live support." },
+              { num: "06", title: "Iterate", icon: HeartHandshake, text: "Post-launch monitoring, performance review, user feedback incorporation, and improvement cycles." },
             ].map((step, idx) => (
-              <div key={idx} className="relative group">
+              <div key={idx} className="relative group animate-in" style={{ animationDelay: `${0.1 * idx}s` }}>
                 <div className="flex items-center gap-4 mb-4">
                   <p className="font-mono text-[10px] text-text-secondary group-hover:text-accent-gold transition-colors">{step.num}</p>
                   <div className="w-8 h-8 rounded-full bg-accent-green/10 flex items-center justify-center">
                     <step.icon className="w-4 h-4 text-accent-green" />
                   </div>
                 </div>
-                <h3 className="font-display text-2xl mb-4">{step.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{step.text}</p>
-                {idx < 3 && <div className="hidden lg:block absolute top-[4.5rem] -right-6 text-gray-700">→</div>}
+                <h3 className="font-display text-xl mb-4">{step.title}</h3>
+                <p className="text-xs text-gray-400 leading-relaxed">{step.text}</p>
               </div>
             ))}
           </div>

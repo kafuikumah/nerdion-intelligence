@@ -25,17 +25,17 @@ export default function Insights() {
                     <div className="grid lg:grid-cols-2">
                         <div className="p-10 lg:p-16 flex flex-col justify-center">
                             <div className="flex gap-4 mb-6">
-                                <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">White Paper</span>
-                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">NOV 14, 2024</span>
+                                <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">Policy Paper</span>
+                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">JUL 28, 2026</span>
                             </div>
                             <h2 className="font-display text-4xl lg:text-5xl text-text-primary mb-6 group-hover:text-accent-green transition-colors leading-tight">
-                                The Future of Regional M&E Platforms in West Africa
+                                Reclaiming Sovereignty: The Role of African-Owned Data in Debt Negotiations
                             </h2>
-                            <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-                                A strategic analysis of how centralizing developmental data across member states transforms regional policy coordination and donor accountability.
+                            <p className="text-text-secondary text-base mb-8 leading-relaxed">
+                                A policy analysis of the G20 Common Framework and why building an African-owned sovereign debt reference registry restores technical agency and voice in creditor negotiations.
                             </p>
-                            <Link href="#" className="flex items-center gap-2 text-accent-green text-sm font-semibold group/link">
-                                Read White Paper <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                            <Link href="/insights/african-debt-sovereignty" className="flex items-center gap-2 text-accent-green text-sm font-semibold group/link">
+                                Read Policy Paper <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                             </Link>
                         </div>
                         <div className="bg-hover/50 p-12 lg:p-24 flex items-center justify-center">
@@ -61,19 +61,21 @@ export default function Insights() {
             {/* Article Grid */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 animate-in">
                 {[
-                    { tag: "Analysis", title: "Enterprise Management Systems for Executive Leadership", date: "SEP 12, 2023" },
-                    { tag: "Guide", title: "Standardizing National Indicator Frameworks Globally", date: "MAY 28, 2024" },
-                    { tag: "Analysis", title: "The Impact of Custom Digital Tools on Field Operations", date: "OCT 15, 2022" },
+                    { tag: "Architecture", title: "Engineering for Macroeconomic Surveillance: Behind the ADMM Technical Architecture", date: "JUL 28, 2026", href: "/insights/building-scalable-debt-surveillance" },
+                    { tag: "Policy", title: "From Declarations to Action: Benchmarking Health Financing across 55 AU States", date: "JUL 28, 2026", href: "/insights/translating-declarations-to-budgets" },
+                    { tag: "Product Design", title: "Designing Decision-Ready Analytics: Benchmarking Healthcare Expenditures in Africa", date: "JUL 28, 2026", href: "/insights/benchmarking-health-financing-africa" },
                 ].map((article, idx) => (
-                    <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group flex flex-col">
-                        <div className="flex justify-between mb-8">
-                            <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">{article.tag}</span>
-                            <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">{article.date}</span>
+                    <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group flex flex-col justify-between">
+                        <div>
+                            <div className="flex justify-between mb-8">
+                                <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">{article.tag}</span>
+                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">{article.date}</span>
+                            </div>
+                            <h3 className="font-display text-2xl text-text-primary mb-6 group-hover:text-accent-green transition-colors flex-grow">
+                                {article.title}
+                            </h3>
                         </div>
-                        <h3 className="font-display text-2xl text-text-primary mb-6 group-hover:text-accent-green transition-colors flex-grow">
-                            {article.title}
-                        </h3>
-                        <Link href="#" className="text-xs font-mono text-text-secondary group-hover:text-accent-green transition-colors mt-auto block">
+                        <Link href={article.href} className="text-xs font-mono text-text-secondary group-hover:text-accent-green transition-colors mt-auto block pt-6">
                             READ ARTICLE →
                         </Link>
                     </div>
@@ -104,7 +106,7 @@ export default function Insights() {
                                     <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest ml-4">{paper.date}</span>
                                 </div>
                                 <p className="text-sm text-text-secondary leading-relaxed mb-6">{paper.desc}</p>
-                                <Link href="#" className="text-xs font-mono text-accent-green hover:underline">DOWNLOAD PDF (4.2 MB)</Link>
+                               <Link href="#" className="text-xs font-mono text-accent-green hover:underline">DOWNLOAD PDF (4.2 MB)</Link>
                             </div>
                         </div>
                     ))}

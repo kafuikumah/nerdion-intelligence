@@ -11,10 +11,12 @@ const navItems = [
         href: "/about",
         megaMenu: {
             grid: [
-                { title: "Our Story", description: "Founded in Accra, built for the world", href: "/about#story" },
-                { title: "The Team", description: "Engineers, designers, specialists", href: "/about#team" },
-                { title: "Our Approach", description: "How we discover, design, and build", href: "/about#approach" },
-                { title: "Partnerships", description: "Strategic alliances and registrations", href: "/about#partners" },
+                { title: "Our Story", description: "Founded in Accra, built for the world.", href: "/about#story" },
+                { title: "Operating Values (TECH)", description: "Technology, Equity, Collaboration, Human-Centred.", href: "/about#values" },
+                { title: "Executive Committee", description: "Our CEO, CTO, and CFO focus mandates.", href: "/about#team" },
+                { title: "Corporate Structure", description: "Technical Expert & Corporate divisions.", href: "/about#structure" },
+                { title: "Our Engagement", description: "Discover, design, prototype, and build.", href: "/about#approach" },
+                { title: "Partnerships", description: "Strategic alliances and registrations.", href: "/about#partners" },
             ],
         },
     },
@@ -29,9 +31,11 @@ const navItems = [
                 href: "/what-we-do",
             },
             items: [
-                { title: "Enterprise Management Platforms", description: "Dashboards and analytics for evidence-based leadership decisions", href: "/what-we-do#decision-intelligence" },
-                { title: "Monitoring & Evaluation Systems", description: "Full MEAL platform builds from logframe to live system", href: "/what-we-do#me-systems" },
-                { title: "Custom Digital Tools", description: "Bespoke internal tools built for how your teams actually work", href: "/what-we-do#custom-tools" },
+                { title: "Data Analytics", description: "Interoperable data models, analytics & automated reporting", href: "/what-we-do#data-analytics" },
+                { title: "Health", description: "Financing analytics, expenditure tracking & health performance intelligence", href: "/what-we-do#health" },
+                { title: "Agriculture", description: "Farmer value-chain delivery analytics & geospatial agriculture intelligence", href: "/what-we-do#agriculture" },
+                { title: "Sustainability & Climate", description: "NDC tracking, MRV support & climate finance mapping", href: "/what-we-do#climate" },
+                { title: "Finance", description: "Public & development finance, budget execution & investment pipeline", href: "/what-we-do#finance" },
             ],
         },
     },
@@ -40,12 +44,10 @@ const navItems = [
         href: "/solutions",
         megaMenu: {
             grid: [
-                { title: "UN & Multilateral Agencies", description: "Supporting global coordination and response", href: "/solutions#un-agencies" },
-                { title: "International NGOs", description: "Enabling program teams to track outcomes", href: "/solutions#ingos" },
-                { title: "Regional Bodies", description: "ECOWAS, AU, IGAD coordination platforms", href: "/solutions#regional-bodies" },
-                { title: "Development Finance Institutions", description: "Impact measurement for social investment", href: "/solutions#dfis" },
-                { title: "Humanitarian Response", description: "Rapid-deployment crisis tracking systems", href: "/solutions#humanitarian" },
-                { title: "Climate & Environment", description: "Monitoring tools for a sustainable future", href: "/solutions#climate" },
+                { title: "Development Agencies & Multilaterals", description: "Supporting national governments and global ODA allocation analytics.", href: "/solutions#multilaterals" },
+                { title: "International NGOs & Delivery Partners", description: "Enabling program teams to track outcomes in real-time.", href: "/solutions#ingos" },
+                { title: "Regional Bodies & Policy Institutions", description: "Cross-border database systems and policy monitoring platforms.", href: "/solutions#regional-bodies" },
+                { title: "Social Impact & Research Teams", description: "Transforming complex research data into scenario projection engines.", href: "/solutions#research-teams" },
             ],
         },
     },
@@ -60,6 +62,8 @@ const navItems = [
                 href: "/case-study/early-warning-system",
             },
             items: [
+                { title: "African Debt Monitoring Mechanism (ADMM)", href: "/case-study/admm" },
+                { title: "Health Financing Insights Dashboard", href: "/case-study/health-financing-dashboard" },
                 { title: "Cross-Border MEAL Platform", href: "/case-study/regional-monitoring" },
                 { title: "Strategic Investment Portfolio Tracker", href: "/case-study/portfolio-management" },
                 { title: "Digital Beneficiary Accountability Portal", href: "/case-study/beneficiary-feedback" },
@@ -69,6 +73,10 @@ const navItems = [
     {
         label: "Insights",
         href: "/insights",
+    },
+    {
+        label: "Contact",
+        href: "/contact",
     },
 ];
 
@@ -92,7 +100,7 @@ export function Navigation() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
                     <Image
-                        src="/logo.png"
+                        src="/nerdion_logo.png"
                         alt="Nerdion Systems"
                         width={180}
                         height={40}
@@ -203,15 +211,7 @@ export function Navigation() {
                     ))}
                 </div>
 
-                {/* CTA Button */}
-                <div className="hidden lg:block">
-                    <Link
-                        href="/contact"
-                        className="px-6 py-2.5 bg-accent-green text-white text-sm font-medium rounded-sm hover:bg-accent-green/90 transition-all shadow-sm"
-                    >
-                        Start a Project
-                    </Link>
-                </div>
+
 
                 {/* Mobile Toggle */}
                 <button
@@ -253,13 +253,6 @@ export function Navigation() {
                             )}
                         </div>
                     ))}
-                    <Link
-                        href="/contact"
-                        className="mt-4 px-8 py-4 bg-accent-green text-white text-center font-medium rounded-sm"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Start a Project
-                    </Link>
                 </div>
             </div>
         </header>
