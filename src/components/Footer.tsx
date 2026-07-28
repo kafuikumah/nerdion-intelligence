@@ -137,11 +137,11 @@ export function Footer() {
                         © 2026 NERDION SYSTEMS. ALL RIGHTS RESERVED.
                     </p>
                     <div className="flex gap-6 uppercase text-[#94A3B8]/80">
-                        <Link href="#" className="hover:text-accent-green transition-colors">Privacy Policy</Link>
+                        <Link href="/privacy-policy" className="hover:text-accent-green transition-colors">Privacy Policy</Link>
                         <span>·</span>
-                        <Link href="#" className="hover:text-accent-green transition-colors">Terms of Service</Link>
+                        <Link href="/terms-of-service" className="hover:text-accent-green transition-colors">Terms of Service</Link>
                         <span>·</span>
-                        <Link href="#" className="hover:text-accent-green transition-colors">System Security</Link>
+                        <Link href="/system-security" className="hover:text-accent-green transition-colors">System Security</Link>
                     </div>
                 </div>
             </div>
