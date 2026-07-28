@@ -52,22 +52,16 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden lg:block animate-in stagger-2">
-            <div className="aspect-square bg-white border border-border-warm p-12 relative overflow-hidden">
-              {/* Abstract Data Viz Placeholder */}
-              <svg viewBox="0 0 400 400" className="w-full h-full text-border-warm">
-                <rect x="50" y="280" width="60" height="100" fill="currentColor" opacity="0.2" />
-                <rect x="130" y="200" width="60" height="180" fill="currentColor" opacity="0.4" />
-                <rect x="210" y="150" width="60" height="230" fill="currentColor" opacity="0.6" />
-                <rect x="290" y="100" width="60" height="280" fill="currentColor" opacity="0.1" />
-                <path d="M50 250 Q130 150 210 200 T370 50" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-                <circle cx="50" cy="250" r="4" fill="#B8860B" />
-                <circle cx="130" cy="180" r="4" fill="#B8860B" />
-                <circle cx="210" cy="195" r="4" fill="#0433D3" />
-                <circle cx="370" cy="50" r="4" fill="#0433D3" />
-              </svg>
-              <div className="absolute top-8 left-8 p-4 bg-white border border-border-warm shadow-sm">
-                <div className="w-12 h-1 bg-accent-green mb-2"></div>
-                <div className="w-24 h-1 bg-border-warm"></div>
+            <div className="relative aspect-square w-full bg-transparent overflow-hidden group transition-all duration-300">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/Nerdion-hro-image.png"
+                  alt="Nerdion Systems Platform Showcase"
+                  fill
+                  className="object-contain transition-transform duration-75 group-hover:scale-[1.02]"
+                  sizes="(max-w-720px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
           </div>
