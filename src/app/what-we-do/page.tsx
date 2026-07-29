@@ -17,6 +17,7 @@ import {
     Settings,
     GitBranch
 } from "lucide-react";
+import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
 const practices = [
     {
@@ -119,9 +120,7 @@ export default function WhatWeDo() {
                         <div className="lg:col-span-7 space-y-4">
                             {practice.services.map((service, sIdx) => (
                                 <div key={sIdx} className="bg-white border border-border-warm p-8 lg:p-10 group hover:border-accent-green transition-all flex gap-8 items-start">
-                                    <div className="shrink-0 w-12 h-12 bg-accent-green/5 flex items-center justify-center rounded-sm group-hover:bg-accent-green/10 transition-colors">
-                                        <service.icon className="w-6 h-6 text-accent-green" />
-                                    </div>
+                                    <GlassmorphicIcon icon={service.icon} size="md" />
                                     <div>
                                         <h3 className="font-display text-2xl text-text-primary mb-3 group-hover:text-accent-green transition-colors">
                                             {service.name}

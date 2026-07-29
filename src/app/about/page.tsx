@@ -20,6 +20,7 @@ import {
     Database,
     Search
 } from "lucide-react";
+import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
 export default function About() {
     return (
@@ -82,8 +83,9 @@ export default function About() {
                     ].map((val, idx) => (
                         <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group flex flex-col justify-between">
                             <div>
-                                <div className="w-12 h-12 rounded-full bg-accent-green/5 text-accent-green font-display text-2xl font-bold flex items-center justify-center mb-8 group-hover:bg-accent-green group-hover:text-white transition-colors duration-300">
-                                    {val.char}
+                                <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400/25 via-blue-500/10 to-blue-600/5 backdrop-blur-[8px] border border-blue-300/40 shadow-[0_8px_32px_0_rgba(4,51,211,0.12)] shadow-inner shadow-blue-300/25 overflow-hidden shrink-0 group-hover:scale-105 transition-transform duration-300 mb-8 font-display text-2xl font-bold text-[#0433D3]">
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/15 pointer-events-none" />
+                                    <span className="relative z-10">{val.char}</span>
                                 </div>
                                 <h3 className="font-display text-2xl text-text-primary mb-4">{val.title}</h3>
                                 <p className="text-xs text-text-secondary leading-relaxed">{val.desc}</p>
@@ -228,9 +230,7 @@ export default function About() {
                     ].map((division, idx) => (
                         <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green hover:shadow-sm transition-all group flex flex-col justify-between">
                             <div>
-                                <div className="shrink-0 w-12 h-12 bg-accent-green/5 flex items-center justify-center rounded-sm group-hover:bg-accent-green/10 transition-colors mb-8">
-                                    <division.icon className="w-6 h-6 text-accent-green" />
-                                </div>
+                                <GlassmorphicIcon icon={division.icon} size="md" className="mb-8" />
                                 <h3 className="font-display text-2xl text-text-primary mb-4 group-hover:text-accent-green transition-colors">{division.name}</h3>
                                 <p className="text-xs text-text-secondary leading-relaxed">{division.text}</p>
                             </div>
@@ -261,9 +261,7 @@ export default function About() {
                             { title: "Long-term Handover Support", icon: HeartHandshake, text: "Ensuring systems run beyond project cycles by transferring documentation, training, and source registers." },
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white border border-border-warm p-8 shadow-sm flex gap-6 group hover:border-accent-green transition-all">
-                                <div className="shrink-0 w-12 h-12 bg-accent-green/5 flex items-center justify-center rounded-sm group-hover:bg-accent-green/10 transition-colors">
-                                    <item.icon className="w-6 h-6 text-accent-green" />
-                                </div>
+                                <GlassmorphicIcon icon={item.icon} size="md" />
                                 <div>
                                     <h4 className="font-display text-xl text-text-primary mb-2">{item.title}</h4>
                                     <p className="text-xs text-text-secondary leading-relaxed">{item.text}</p>

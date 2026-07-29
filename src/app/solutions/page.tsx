@@ -12,6 +12,7 @@ import {
     Scale,
     Network
 } from "lucide-react";
+import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
 const sectors = [
     {
@@ -107,7 +108,7 @@ export default function Solutions() {
                                 className="bg-white border border-border-warm p-10 group hover:border-accent-green hover:shadow-lg transition-all duration-300 animate-in scroll-mt-24"
                                 style={{ animationDelay: `${idx * 0.1}s` }}
                             >
-                                <Icon className="w-12 h-12 text-accent-green mb-8 group-hover:scale-110 transition-transform duration-300" />
+                                <GlassmorphicIcon icon={Icon} size="md" className="mb-8" />
                                 <h2 className="font-display text-2xl text-text-primary mb-4">{sector.title}</h2>
                                 <p className="text-sm text-text-secondary mb-8 leading-relaxed italic">
                                     {sector.description}
@@ -145,9 +146,7 @@ export default function Solutions() {
                                     { title: "Regional policy tracking systems", icon: Network }
                                 ].map((item, id) => (
                                     <div key={id} className="flex gap-4 items-center group">
-                                        <div className="w-10 h-10 bg-white flex items-center justify-center rounded-sm border border-border-warm group-hover:border-accent-green transition-colors">
-                                            <item.icon className="w-5 h-5 text-accent-green" />
-                                        </div>
+                                        <GlassmorphicIcon icon={item.icon} size="sm" />
                                         <span className="text-text-primary font-medium">{item.title}</span>
                                     </div>
                                 ))}

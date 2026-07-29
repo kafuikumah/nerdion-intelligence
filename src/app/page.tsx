@@ -1,24 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  Database, 
-  BarChart3, 
-  Code2, 
-  Search, 
-  PenTool, 
-  Code, 
-  HeartHandshake, 
-  Activity, 
-  Sprout, 
-  Globe, 
-  Coins, 
-  ShieldCheck, 
-  LineChart, 
-  LayoutDashboard, 
-  History, 
-  Layers 
+import {
+  ArrowRight,
+  Database,
+  BarChart3,
+  Code2,
+  Search,
+  PenTool,
+  Code,
+  HeartHandshake,
+  Activity,
+  Sprout,
+  Globe,
+  Coins,
+  ShieldCheck,
+  LineChart,
+  LayoutDashboard,
+  History,
+  Layers
 } from "lucide-react";
+import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
 export default function Home() {
   return (
@@ -74,7 +75,7 @@ export default function Home() {
           <p className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] text-center mb-10 px-6">
             Trusted by organizations shaping the world
           </p>
-          
+
           <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-footer before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-footer after:to-transparent">
             <div className="flex animate-marquee-ltr gap-4 whitespace-nowrap">
               {/* First Set of Logos */}
@@ -89,12 +90,12 @@ export default function Home() {
                   { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
                 ].map((org, index) => (
                   <div key={`${org.name}-1-${index}`} className="flex items-center justify-center shrink-0">
-                    <Image 
-                      src={org.logo} 
-                      alt={`${org.name} logo`} 
-                      width={120} 
-                      height={60} 
-                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    <Image
+                      src={org.logo}
+                      alt={`${org.name} logo`}
+                      width={120}
+                      height={60}
+                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -112,12 +113,12 @@ export default function Home() {
                   { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
                 ].map((org, index) => (
                   <div key={`${org.name}-2-${index}`} className="flex items-center justify-center shrink-0">
-                    <Image 
-                      src={org.logo} 
-                      alt={`${org.name} logo`} 
-                      width={120} 
-                      height={60} 
-                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    <Image
+                      src={org.logo}
+                      alt={`${org.name} logo`}
+                      width={120}
+                      height={60}
+                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -180,7 +181,7 @@ export default function Home() {
             <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group animate-in flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.1}s` }}>
               <div>
                 <p className="font-mono text-[10px] text-text-secondary mb-8">{item.num}</p>
-                <item.icon className="w-10 h-10 text-accent-green mb-8 group-hover:scale-110 transition-transform duration-300" />
+                <GlassmorphicIcon icon={item.icon} size="md" className="mb-8" />
                 <h3 className="font-display text-2xl text-text-primary mb-4">{item.title}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-8">
                   {item.text}
@@ -260,9 +261,7 @@ export default function Home() {
           ].map((pillar, idx) => (
             <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green hover:shadow-sm transition-all group flex flex-col justify-between" style={{ animationDelay: `${0.1 * idx}s` }}>
               <div>
-                <div className="shrink-0 w-12 h-12 bg-accent-green/5 flex items-center justify-center rounded-sm group-hover:bg-accent-green/10 transition-colors mb-8">
-                  <pillar.icon className="w-6 h-6 text-accent-green" />
-                </div>
+                <GlassmorphicIcon icon={pillar.icon} size="md" className="mb-8" />
                 <h3 className="font-display text-2xl text-text-primary mb-6">{pillar.title}</h3>
                 <ul className="space-y-4">
                   {pillar.bullets.map((bullet, bIdx) => (
@@ -298,9 +297,7 @@ export default function Home() {
               <div key={idx} className="relative group animate-in" style={{ animationDelay: `${0.1 * idx}s` }}>
                 <div className="flex items-center gap-4 mb-4">
                   <p className="font-mono text-[10px] text-text-secondary group-hover:text-accent-gold transition-colors">{step.num}</p>
-                  <div className="w-8 h-8 rounded-full bg-accent-green/10 flex items-center justify-center">
-                    <step.icon className="w-4 h-4 text-accent-green" />
-                  </div>
+                  <GlassmorphicIcon icon={step.icon} size="sm" />
                 </div>
                 <h3 className="font-display text-xl mb-4">{step.title}</h3>
                 <p className="text-xs text-gray-400 leading-relaxed">{step.text}</p>
