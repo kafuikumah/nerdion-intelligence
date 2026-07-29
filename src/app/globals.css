@@ -14,7 +14,7 @@
 
   --font-display: var(--font-playfair);
   --font-body: var(--font-dm-sans);
-  --font-mono: var(--font-jetbrains);
+  --font-mono: var(--font-geist-sans);
 }
 
 :root {
@@ -40,7 +40,8 @@ h4,
 }
 
 .font-mono {
-  font-family: var(--font-jetbrains), monospace;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 500;
 }
 
 /* Section entry animations */
@@ -94,5 +95,25 @@ h4,
 }
 
 .animate-marquee-ltr:hover {
+  animation-play-state: paused;
+}
+
+/* Continuous Logo Marquee (Right to Left) */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 25s linear infinite;
+}
+
+.animate-marquee-rtl:hover {
   animation-play-state: paused;
 }

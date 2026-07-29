@@ -5,18 +5,30 @@ export default function Insights() {
     return (
         <div className="bg-background pb-24 lg:pb-32">
             {/* Hero */}
-            <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-8">
-                    <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
-                    <span>/</span>
-                    <span className="text-text-primary">Insights</span>
-                </nav>
-                <h1 className="font-display text-6xl lg:text-7xl text-text-primary mb-8 max-w-4xl tracking-tight animate-in">
-                    Articles, analysis, and institutional guides.
-                </h1>
-                <p className="text-xl text-text-secondary max-w-2xl leading-relaxed animate-in stagger-1">
-                    Perspectives on the intersection of data, technology, and international development from our multidisciplinary practice.
-                </p>
+            <section className="relative w-full h-[60vh] min-h-[500px] flex flex-col justify-end px-6 lg:px-12 py-16 lg:py-24 bg-cover bg-center mb-16 lg:mb-24" style={{ backgroundImage: "url('/hero_insights.png')" }}>
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/60 z-0"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full flex flex-col justify-end">
+                    <div>
+                        <nav className="flex gap-2 text-xs font-mono text-gray-300 uppercase mb-8">
+                            <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
+                            <span>/</span>
+                            <span className="text-white">Insights</span>
+                        </nav>
+                        <h1 className="font-display text-5xl lg:text-7xl text-white mb-6 max-w-4xl tracking-tight animate-in">
+                            Articles, analysis, and institutional guides.
+                        </h1>
+                        <p className="text-lg text-gray-300 max-w-2xl leading-relaxed animate-in stagger-1 pb-12">
+                            Perspectives on the intersection of data, technology, and international development from our multidisciplinary practice.
+                        </p>
+                    </div>
+
+                    <div className="mt-8">
+                        <p className="font-display text-xl lg:text-2xl text-white/90">A small team. Serious engineering.</p>
+                    </div>
+                </div>
             </section>
 
             {/* Featured Article */}
@@ -25,8 +37,8 @@ export default function Insights() {
                     <div className="grid lg:grid-cols-2">
                         <div className="p-10 lg:p-16 flex flex-col justify-center">
                             <div className="flex gap-4 mb-6">
-                                <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">Policy Paper</span>
-                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">JUL 28, 2026</span>
+                                <span className="font-mono text-[10px] text-accent-green uppercase">Policy Paper</span>
+                                <span className="font-mono text-[10px] text-text-secondary uppercase">JUL 28, 2026</span>
                             </div>
                             <h2 className="font-display text-4xl lg:text-5xl text-text-primary mb-6 group-hover:text-accent-green transition-colors leading-tight">
                                 Reclaiming Sovereignty: The Role of African-Owned Data in Debt Negotiations
@@ -68,8 +80,8 @@ export default function Insights() {
                     <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group flex flex-col justify-between">
                         <div>
                             <div className="flex justify-between mb-8">
-                                <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">{article.tag}</span>
-                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">{article.date}</span>
+                                <span className="font-mono text-[10px] text-accent-green uppercase">{article.tag}</span>
+                                <span className="font-mono text-[10px] text-text-secondary uppercase">{article.date}</span>
                             </div>
                             <h3 className="font-display text-2xl text-text-primary mb-6 group-hover:text-accent-green transition-colors flex-grow">
                                 {article.title}
@@ -86,7 +98,7 @@ export default function Insights() {
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in">
                 <div className="flex justify-between items-end mb-16">
                     <div>
-                        <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Resources</p>
+                        <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Resources</p>
                         <h2 className="font-display text-4xl lg:text-5xl text-text-primary">White papers & guides</h2>
                     </div>
                 </div>
@@ -103,7 +115,7 @@ export default function Insights() {
                             <div>
                                 <div className="flex justify-between items-start mb-2">
                                     <h3 className="font-display text-2xl text-text-primary flex-grow">{paper.title}</h3>
-                                    <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest ml-4">{paper.date}</span>
+                                    <span className="font-mono text-[10px] text-text-secondary uppercase ml-4">{paper.date}</span>
                                 </div>
                                 <p className="text-sm text-text-secondary leading-relaxed mb-6">{paper.desc}</p>
                                <Link href="#" className="text-xs font-mono text-accent-green hover:underline">DOWNLOAD PDF (4.2 MB)</Link>

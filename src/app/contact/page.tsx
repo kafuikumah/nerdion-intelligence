@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="bg-background pb-24 lg:pb-32">
             {/* Hero */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32 text-center animate-in">
-                <nav className="flex justify-center gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-8">
+                <nav className="flex justify-center gap-2 text-xs font-mono text-text-secondary uppercase mb-8">
                     <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
                     <span>/</span>
                     <span className="text-text-primary">Contact</span>
@@ -28,20 +28,20 @@ export default function Contact() {
                     <form className="space-y-8">
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="flex flex-col gap-2">
-                                <label className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Full Name</label>
+                                <label className="font-mono text-[10px] text-text-secondary uppercase">Full Name</label>
                                 <input type="text" className="px-0 py-3 border-b border-border-warm focus:border-accent-green focus:outline-none transition-colors text-text-primary placeholder:text-gray-300" placeholder="Kofi Mensah" />
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Organization</label>
+                                <label className="font-mono text-[10px] text-text-secondary uppercase">Organization</label>
                                 <input type="text" className="px-0 py-3 border-b border-border-warm focus:border-accent-green focus:outline-none transition-colors text-text-primary placeholder:text-gray-300" placeholder="ECOWAS, UN OCHA, etc." />
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Email Address</label>
+                            <label className="font-mono text-[10px] text-text-secondary uppercase">Email Address</label>
                             <input type="email" className="px-0 py-3 border-b border-border-warm focus:border-accent-green focus:outline-none transition-colors text-text-primary placeholder:text-gray-300" placeholder="official.email@organization.org" />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Practice Interest</label>
+                            <label className="font-mono text-[10px] text-text-secondary uppercase">Practice Interest</label>
                             <select className="px-0 py-3 border-b border-border-warm focus:border-accent-green focus:outline-none bg-transparent transition-colors text-text-primary">
                                 <option value="enterprise-management">Enterprise Management Platforms</option>
                                 <option value="me-systems">Monitoring & Evaluation Systems</option>
@@ -50,7 +50,7 @@ export default function Contact() {
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Your Message</label>
+                            <label className="font-mono text-[10px] text-text-secondary uppercase">Your Message</label>
                             <textarea rows={4} className="px-0 py-3 border-b border-border-warm focus:border-accent-green focus:outline-none transition-colors text-text-primary resize-none placeholder:text-gray-300" placeholder="Tell us about the challenge you&apos;re looking to solve..."></textarea>
                         </div>
                         <button type="submit" className="w-full py-5 bg-accent-green text-white font-medium hover:bg-accent-green/90 transition-all flex items-center justify-center gap-3 group shadow-md">
@@ -67,7 +67,7 @@ export default function Contact() {
                                 <Mail className="w-5 h-5 text-accent-green" />
                             </div>
                             <div>
-                                <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-1">Email</p>
+                                <p className="font-mono text-[10px] text-text-secondary uppercase mb-1">Email</p>
                                 <p className="text-lg text-text-primary font-medium">info@nerdionsystems.com</p>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                                 <Phone className="w-5 h-5 text-accent-green" />
                             </div>
                             <div>
-                                <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-1">Phone</p>
+                                <p className="font-mono text-[10px] text-text-secondary uppercase mb-1">Phone</p>
                                 <p className="text-lg text-text-primary font-medium">+233 24 104 9063</p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                                 <Clock className="w-5 h-5 text-accent-green" />
                             </div>
                             <div>
-                                <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-1">Response Time</p>
+                                <p className="font-mono text-[10px] text-text-secondary uppercase mb-1">Response Time</p>
                                 <p className="text-lg text-text-primary font-medium">Typically 24–48 hours</p>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ export default function Contact() {
 
             {/* Offices */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm mt-24 animate-in">
-                <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-12 text-center">Global Presence</p>
+                <p className="font-mono text-[10px] text-accent-green uppercase mb-12 text-center">Global Presence</p>
                 <div className="grid md:grid-cols-3 gap-8">
                     {[
                         { city: "Accra", type: "HQ & Engineering Hub", flag: "🇬🇭", address: "One Airport Square, Airport City, Accra, Ghana" },
@@ -115,10 +115,10 @@ export default function Contact() {
                         <div key={idx} className="bg-white border border-border-warm p-10">
                             <div className="flex justify-between items-start mb-8">
                                 <span className="text-4xl">{office.flag}</span>
-                                <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest">{office.city}</span>
+                                <span className="font-mono text-[10px] text-text-secondary uppercase">{office.city}</span>
                             </div>
                             <h3 className="font-display text-2xl text-text-primary mb-2">{office.city}</h3>
-                            <p className="text-xs text-accent-green font-mono uppercase tracking-widest mb-6">{office.type}</p>
+                            <p className="text-xs text-accent-green font-mono uppercase mb-6">{office.type}</p>
                             <p className="text-sm text-text-secondary leading-relaxed">{office.address}</p>
                         </div>
                     ))}

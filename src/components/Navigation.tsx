@@ -2,82 +2,27 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navItems = [
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about" },
+    { label: "SERVICES", href: "/services" },
+    { label: "HOW WE WORK", href: "/how-we-work" },
+    { label: "WORKS", href: "/our-work" },
     {
-        label: "About",
-        href: "/about",
-        megaMenu: {
-            grid: [
-                { title: "Our Story", description: "Founded in Accra, built for the world.", href: "/about#story" },
-                { title: "Operating Values (TECH)", description: "Technology, Equity, Collaboration, Human-Centred.", href: "/about#values" },
-                { title: "Executive Committee", description: "Our CEO, CTO, and CFO focus mandates.", href: "/about#team" },
-                { title: "Corporate Structure", description: "Technical Expert & Corporate divisions.", href: "/about#structure" },
-                { title: "Our Engagement", description: "Discover, design, prototype, and build.", href: "/about#approach" },
-                { title: "Partnerships", description: "Strategic alliances and registrations.", href: "/about#partners" },
-            ],
-        },
-    },
-    {
-        label: "What We Do",
-        href: "/what-we-do",
-        megaMenu: {
-            featured: {
-                label: "Our Practice",
-                title: "End-to-end Technology for Development Organizations",
-                subtext: "We design and build the digital infrastructure that turns evidence into action.",
-                href: "/what-we-do",
-            },
-            items: [
-                { title: "Data Analytics", description: "Interoperable data models, analytics & automated reporting", href: "/what-we-do#data-analytics" },
-                { title: "Health", description: "Financing analytics, expenditure tracking & health performance intelligence", href: "/what-we-do#health" },
-                { title: "Agriculture", description: "Farmer value-chain delivery analytics & geospatial agriculture intelligence", href: "/what-we-do#agriculture" },
-                { title: "Sustainability & Climate", description: "NDC tracking, MRV support & climate finance mapping", href: "/what-we-do#climate" },
-                { title: "Finance", description: "Public & development finance, budget execution & investment pipeline", href: "/what-we-do#finance" },
-            ],
-        },
-    },
-    {
-        label: "Solutions",
-        href: "/solutions",
-        megaMenu: {
-            grid: [
-                { title: "Development Agencies & Multilaterals", description: "Supporting national governments and global ODA allocation analytics.", href: "/solutions#multilaterals" },
-                { title: "International NGOs & Delivery Partners", description: "Enabling program teams to track outcomes in real-time.", href: "/solutions#ingos" },
-                { title: "Regional Bodies & Policy Institutions", description: "Cross-border database systems and policy monitoring platforms.", href: "/solutions#regional-bodies" },
-                { title: "Social Impact & Research Teams", description: "Transforming complex research data into scenario projection engines.", href: "/solutions#research-teams" },
-            ],
-        },
-    },
-    {
-        label: "Our Work",
-        href: "/our-work",
-        megaMenu: {
-            featured: {
-                label: "Featured Case Study",
-                title: "Global Humanitarian Early Warning System",
-                outcome: "4–6 week early lead time",
-                href: "/case-study/early-warning-system",
-            },
-            items: [
-                { title: "African Debt Monitoring Mechanism (ADMM)", href: "/case-study/admm" },
-                { title: "Health Financing Insights Dashboard", href: "/case-study/health-financing-dashboard" },
-                { title: "Cross-Border MEAL Platform", href: "/case-study/regional-monitoring" },
-                { title: "Strategic Investment Portfolio Tracker", href: "/case-study/portfolio-management" },
-                { title: "Digital Beneficiary Accountability Portal", href: "/case-study/beneficiary-feedback" },
-            ],
-        },
-    },
-    {
-        label: "Insights",
+        label: "RESOURCES",
         href: "/insights",
+        megaMenu: [
+            { title: "AI READINESS TEST", description: "Evaluate your organization's readiness for AI transformation", href: "/resources/ai-readiness" },
+            { title: "INSIGHTS", description: "Technical writing on engineering, ML, and data systems", href: "/insights" },
+            { title: "REPORTS", description: "Deep-dive reports, impact analyses, and industry findings", href: "/resources/reports" },
+            { title: "IMPACTCOMPASS", description: "Positioning tool to secure deals, grants, and funding", href: "/resources/positioning-tool" },
+            { title: "ATLAS BY NERDION", description: "Advanced Transparency, Learning & Accountability System", href: "/resources/atlas" },
+        ]
     },
-    {
-        label: "Contact",
-        href: "/contact",
-    },
+    { label: "CONTACT", href: "/contact" }
 ];
 
 export function Navigation() {
@@ -93,7 +38,7 @@ export function Navigation() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-border-warm py-4" : "bg-transparent py-6"
+            className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled ? "shadow-sm border-b border-border-warm py-4" : "py-6"
                 }`}
         >
             <nav className="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -110,108 +55,54 @@ export function Navigation() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden lg:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-10">
                     {navItems.map((item, idx) => (
                         <div
                             key={item.label}
-                            className="relative group py-2"
+                            className="relative group py-6"
                             onMouseEnter={() => setActiveMega(idx)}
                             onMouseLeave={() => setActiveMega(null)}
                         >
                             <Link
                                 href={item.href}
-                                className="flex items-center gap-1 text-sm font-medium text-text-secondary hover:text-accent-green transition-colors"
+                                className={`flex items-center gap-1.5 text-[12px] tracking-wide font-medium transition-colors ${activeMega === idx ? "text-gray-400" : "text-text-primary hover:text-gray-600"}`}
                             >
                                 {item.label}
-                                {item.megaMenu && <ChevronDown className="w-4 h-4" />}
+                                {item.megaMenu && (
+                                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMega === idx ? "rotate-180" : ""}`} />
+                                )}
                             </Link>
 
-                            {/* Mega Menu */}
+                            {/* Dropdown Menu */}
                             {item.megaMenu && (
                                 <div
-                                    className={`absolute top-full left-1/2 -translate-x-1/2 w-[600px] mt-2 bg-white border border-border-warm shadow-xl transition-all duration-300 origin-top overflow-hidden rounded-sm ${activeMega === idx ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                                    className={`absolute top-full right-0 w-[420px] bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-200 origin-top overflow-hidden rounded-sm ${activeMega === idx ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                                         }`}
                                 >
-                                    <div className="grid grid-cols-2">
-                                        {item.megaMenu.featured ? (
-                                            <>
-                                                <div className="bg-hover/30 p-8">
-                                                    <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-4">
-                                                        {item.megaMenu.featured.label}
-                                                    </p>
-                                                    <h3 className="font-display text-xl text-text-primary mb-4 leading-tight">
-                                                        {item.megaMenu.featured.title}
-                                                    </h3>
-                                                    {item.megaMenu.featured.subtext && (
-                                                        <p className="text-sm text-text-secondary mb-6 leading-relaxed">
-                                                            {item.megaMenu.featured.subtext}
-                                                        </p>
-                                                    )}
-                                                    {item.megaMenu.featured.outcome && (
-                                                        <div className="inline-block px-3 py-1 bg-accent-gold text-white text-[10px] font-mono rounded-sm mb-6">
-                                                            {item.megaMenu.featured.outcome}
-                                                        </div>
-                                                    )}
-                                                    <Link
-                                                        href={item.megaMenu.featured.href}
-                                                        className="flex items-center gap-2 text-accent-green text-sm font-semibold hover:gap-3 transition-all"
-                                                    >
-                                                        Learn More <ArrowRight className="w-4 h-4" />
-                                                    </Link>
+                                    <div className="flex flex-col">
+                                        {item.megaMenu.map((sub, i) => (
+                                            <Link
+                                                key={sub.title}
+                                                href={sub.href}
+                                                className={`block px-8 py-6 group/item ${i !== item.megaMenu.length - 1 ? 'border-b border-gray-100' : ''}`}
+                                            >
+                                                <div className="inline-block relative mb-1.5">
+                                                    <h4 className="text-[13px] font-semibold text-text-primary uppercase group-hover/item:text-accent-green transition-colors">
+                                                        {sub.title}
+                                                    </h4>
+                                                    <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-accent-green transition-all duration-300 group-hover/item:w-full"></span>
                                                 </div>
-                                                <div className="p-8 space-y-6">
-                                                    {item.megaMenu.items?.map((sub) => (
-                                                        <Link
-                                                            key={sub.title}
-                                                            href={sub.href}
-                                                            className="block group/item"
-                                                        >
-                                                            <h4 className="text-sm font-semibold text-text-primary group-hover/item:text-accent-green transition-colors mb-1">
-                                                                {sub.title}
-                                                            </h4>
-                                                            {"description" in sub && sub.description && (
-                                                                <p className="text-xs text-text-secondary line-clamp-2">
-                                                                    {sub.description}
-                                                                </p>
-                                                            )}
-                                                        </Link>
-                                                    ))}
-                                                    {item.label === "Our Work" && (
-                                                        <Link
-                                                            href="/our-work"
-                                                            className="block text-xs font-mono text-accent-green hover:underline pt-2"
-                                                        >
-                                                            View All Case Studies →
-                                                        </Link>
-                                                    )}
-                                                </div>
-                                            </>
-                                        ) : (
-                                            <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-6 p-8">
-                                                {item.megaMenu.grid?.map((sub) => (
-                                                    <Link
-                                                        key={sub.title}
-                                                        href={sub.href}
-                                                        className="group/item"
-                                                    >
-                                                        <h4 className="text-sm font-semibold text-text-primary group-hover/item:text-accent-green transition-colors mb-1">
-                                                            {sub.title}
-                                                        </h4>
-                                                        <p className="text-xs text-text-secondary">
-                                                            {sub.description}
-                                                        </p>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        )}
+                                                <p className="text-[13px] text-gray-500 leading-snug">
+                                                    {sub.description}
+                                                </p>
+                                            </Link>
+                                        ))}
                                     </div>
                                 </div>
                             )}
                         </div>
                     ))}
                 </div>
-
-
 
                 {/* Mobile Toggle */}
                 <button
@@ -232,21 +123,22 @@ export function Navigation() {
                         <div key={item.label} className="border-b border-border-warm pb-4">
                             <Link
                                 href={item.href}
-                                className="text-2xl font-display text-text-primary mb-4 block"
+                                className="text-2xl font-display text-text-primary mb-4 block uppercase"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {item.label}
                             </Link>
                             {item.megaMenu && (
-                                <div className="grid grid-cols-1 gap-3 pl-4">
-                                    {(item.megaMenu.items || item.megaMenu.grid)?.map((sub) => (
+                                <div className="grid grid-cols-1 gap-4 pl-4">
+                                    {item.megaMenu.map((sub) => (
                                         <Link
                                             key={sub.title}
                                             href={sub.href}
-                                            className="text-sm text-text-secondary hover:text-accent-green"
+                                            className="block"
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            {sub.title}
+                                            <h4 className="text-sm font-semibold text-text-primary uppercase mb-1">{sub.title}</h4>
+                                            <p className="text-xs text-text-secondary">{sub.description}</p>
                                         </Link>
                                     ))}
                                 </div>
@@ -258,3 +150,4 @@ export function Navigation() {
         </header>
     );
 }
+

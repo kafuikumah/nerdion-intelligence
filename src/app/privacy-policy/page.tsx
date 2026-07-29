@@ -8,14 +8,14 @@ export default function PrivacyPolicy() {
         <div className="bg-background pb-24 lg:pb-32">
             {/* Header */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-12">
+                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase mb-12">
                     <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
                     <span>/</span>
                     <span className="text-text-primary">Privacy Policy</span>
                 </nav>
 
                 <div className="max-w-4xl animate-in">
-                    <p className="font-mono text-accent-green text-xs uppercase tracking-[0.3em] mb-4">Legal & Governance</p>
+                    <p className="font-mono text-accent-green text-xs uppercase mb-4">Legal & Governance</p>
                     <h1 className="font-display text-4xl lg:text-6xl text-text-primary tracking-tight leading-tight">
                         Privacy Policy
                     </h1>
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
                 {/* Side Directory */}
                 <div className="hidden lg:block lg:col-span-3">
                     <div className="sticky top-32 space-y-4 border-l border-border-warm pl-6 text-sm">
-                        <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-6">Sections</p>
+                        <p className="font-mono text-[10px] text-text-secondary uppercase mb-6">Sections</p>
                         <a href="#scope" className="block text-text-secondary hover:text-accent-green transition-colors">1. Scope & Jurisdiction</a>
                         <a href="#compliance" className="block text-text-secondary hover:text-accent-green transition-colors">2. Policy Compliance</a>
                         <a href="#staging" className="block text-text-secondary hover:text-accent-green transition-colors">3. Data Staging Isolation</a>
@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
 
             {/* Back Button */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 mt-24">
-                <Link href="/" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase tracking-widest transition-colors group">
+                <Link href="/" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase transition-colors group">
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
                 </Link>
             </section>

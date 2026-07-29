@@ -8,12 +8,12 @@ const categories = ["All", "Data Analytics", "Health", "Agriculture", "Sustainab
 
 const caseStudies = [
     {
-        client: "Leading Multilateral Organization",
-        title: "Global Humanitarian Early Warning System",
-        description: "A multi-country platform consolidating 14 real-time data feeds to provide actionable early warnings 4–6 weeks ahead of crises.",
-        category: "Data Analytics",
-        outcome: "4–6wk early lead time",
-        href: "/case-study/early-warning-system",
+        client: "African Renaissance Trust (ART)",
+        title: "Health Financing Insights Dashboard",
+        description: "Interactive analytics platform mapping domestic resources, benchmarking sovereign performances, and tracking ALM/Abuja declaration targets across 55 African nations.",
+        category: "Health",
+        outcome: "Sovereign benchmarking matrix",
+        href: "/case-study/health-financing-dashboard",
         featured: true
     },
     {
@@ -23,60 +23,6 @@ const caseStudies = [
         category: "Finance",
         outcome: "Macro surveillance registry",
         href: "/case-study/admm",
-        featured: false
-    },
-    {
-        client: "African Renaissance Trust (ART)",
-        title: "Health Financing Insights Dashboard",
-        description: "Interactive analytics platform mapping domestic resources, benchmarking sovereign performances, and tracking ALM/Abuja declaration targets across 55 African nations.",
-        category: "Health",
-        outcome: "Sovereign benchmarking matrix",
-        href: "/case-study/health-financing-dashboard",
-        featured: false
-    },
-    {
-        client: "Regional Intergovernmental Body",
-        title: "Cross-Border MEAL Platform",
-        description: "A centralized system for tracking 340+ developmental indicators across 15 member states in West Africa.",
-        category: "Data Analytics",
-        outcome: "70% faster reporting",
-        href: "/case-study/regional-monitoring",
-        featured: false
-    },
-    {
-        client: "Continental Development Finance Institution",
-        title: "Strategic Investment Portfolio Tracker",
-        description: "Comprehensive dashboard for tracking $2.4B in infrastructure and social investments across multiple regions.",
-        category: "Finance",
-        outcome: "$2.4B portfolio tracked",
-        href: "/case-study/portfolio-management",
-        featured: false
-    },
-    {
-        client: "Major International NGO",
-        title: "Digital Beneficiary Accountability Portal",
-        description: "Closing the loop with 1.2M program participants via integrated SMS and web-based feedback mechanisms.",
-        category: "Data Analytics",
-        outcome: "1.2M participants",
-        href: "/case-study/beneficiary-feedback",
-        featured: false
-    },
-    {
-        client: "Global Development Foundation",
-        title: "Education Outcomes Tracking System",
-        description: "Real-time monitoring of literacy programs and school attendance across 240 rural learning centers.",
-        category: "Data Analytics",
-        outcome: "240 schools tracked",
-        href: "/case-study/education-tracking",
-        featured: false
-    },
-    {
-        client: "Pan-African Development Agency",
-        title: "Regional Infrastructure Reporting Tool",
-        description: "Strategic project management and reporting tool for continental infrastructure development initiatives.",
-        category: "Data Analytics",
-        outcome: "Continental rollout",
-        href: "/case-study/infrastructure-reporting",
         featured: false
     }
 ];
@@ -94,18 +40,30 @@ export default function OurWork() {
     return (
         <div className="bg-background min-h-screen pb-24 lg:pb-32">
             {/* Hero */}
-            <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-8">
-                    <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
-                    <span>/</span>
-                    <span className="text-text-primary">Our Work</span>
-                </nav>
-                <h1 className="font-display text-6xl lg:text-7xl text-text-primary mb-8 max-w-4xl tracking-tight animate-in">
-                    Proven outcomes for a world in transition.
-                </h1>
-                <p className="text-xl text-text-secondary max-w-2xl leading-relaxed animate-in stagger-1">
-                    Explore our practice through the organizations we serve and the digital systems we&apos;ve built to drive global impact.
-                </p>
+            <section className="relative w-full h-[60vh] min-h-[500px] flex flex-col justify-end px-6 lg:px-12 py-16 lg:py-24 bg-cover bg-center mb-16 lg:mb-24" style={{ backgroundImage: "url('/hero_works.png')" }}>
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/60 z-0"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full flex flex-col justify-end">
+                    <div>
+                        <nav className="flex gap-2 text-xs font-mono text-gray-300 uppercase mb-8">
+                            <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
+                            <span>/</span>
+                            <span className="text-white">Our Work</span>
+                        </nav>
+                        <h1 className="font-display text-5xl lg:text-7xl text-white mb-6 max-w-4xl tracking-tight animate-in">
+                            Proven outcomes for a world in transition.
+                        </h1>
+                        <p className="text-lg text-gray-300 max-w-2xl leading-relaxed animate-in stagger-1 pb-12">
+                            Explore our practice through the organizations we serve and the digital systems we&apos;ve built to drive global impact.
+                        </p>
+                    </div>
+
+                    <div className="mt-auto">
+                        <p className="font-display text-xl lg:text-2xl text-white/90">A small team. Serious engineering.</p>
+                    </div>
+                </div>
             </section>
 
             {/* Filters */}
@@ -135,7 +93,7 @@ export default function OurWork() {
                         <Link href={featured.href} className="group bg-white border border-border-warm hover:border-accent-green transition-all animate-in">
                             <div className="grid lg:grid-cols-2">
                                 <div className="p-10 lg:p-16 flex flex-col justify-center">
-                                    <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4 group-hover:tracking-[0.2em] transition-all">
+                                    <p className="font-mono text-[10px] text-accent-green uppercase mb-4 group-hover: transition-all">
                                         {featured.client}
                                     </p>
                                     <h3 className="font-display text-4xl lg:text-5xl text-text-primary mb-6 group-hover:text-accent-green transition-colors">
@@ -174,7 +132,7 @@ export default function OurWork() {
                                 className="group bg-white border border-border-warm p-10 hover:border-accent-green transition-all animate-in"
                                 style={{ animationDelay: `${0.1 * idx}s` }}
                             >
-                                <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4 group-hover:tracking-[0.2em] transition-all">
+                                <p className="font-mono text-[10px] text-accent-green uppercase mb-4 group-hover: transition-all">
                                     {study.client}
                                 </p>
                                 <h3 className="font-display text-2xl text-text-primary mb-4 group-hover:text-accent-green transition-colors">

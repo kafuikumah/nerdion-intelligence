@@ -8,7 +8,7 @@ export default function DebtSurveillanceArchitectureArticle() {
         <div className="bg-background pb-24 lg:pb-32">
             {/* Header */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-12">
+                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase mb-12">
                     <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
                     <span>/</span>
                     <Link href="/insights" className="hover:text-accent-green transition-colors">Insights</Link>
@@ -17,7 +17,7 @@ export default function DebtSurveillanceArchitectureArticle() {
                 </nav>
 
                 <div className="max-w-4xl animate-in">
-                    <p className="font-mono text-accent-green text-xs uppercase tracking-[0.3em] mb-4">Technical Guide / Architecture</p>
+                    <p className="font-mono text-accent-green text-xs uppercase mb-4">Technical Guide / Architecture</p>
                     <h1 className="font-display text-4xl lg:text-6xl text-text-primary tracking-tight leading-tight mb-8">
                         Engineering for Macroeconomic Surveillance: Behind the ADMM Technical Architecture
                     </h1>
@@ -73,7 +73,7 @@ export default function DebtSurveillanceArchitectureArticle() {
 
                 <div className="lg:col-span-4 animate-in stagger-2">
                     <div className="bg-white border border-border-warm p-10">
-                        <h4 className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] mb-6 border-b border-border-warm pb-4">
+                        <h4 className="font-mono text-[10px] text-text-secondary uppercase mb-6 border-b border-border-warm pb-4">
                             Technical Elements
                         </h4>
                         <ul className="space-y-4 text-sm font-medium text-text-primary">
@@ -88,7 +88,7 @@ export default function DebtSurveillanceArchitectureArticle() {
 
             {/* Back Button */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 mt-24">
-                <Link href="/insights" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase tracking-widest transition-colors group">
+                <Link href="/insights" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase transition-colors group">
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Insights
                 </Link>
             </section>

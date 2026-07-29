@@ -17,7 +17,8 @@ import {
   LineChart,
   LayoutDashboard,
   History,
-  Layers
+  Layers,
+  BrainCircuit
 } from "lucide-react";
 import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
@@ -28,7 +29,7 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="animate-in stagger-1">
-            <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.3em] mb-6">
+            <p className="font-mono text-[10px] text-accent-green uppercase mb-6">
               Accra · Manchester
             </p>
             <h1 className="font-display text-6xl lg:text-[88px] leading-[1.05] text-text-primary mb-8 tracking-tight">
@@ -37,19 +38,73 @@ export default function Home() {
             <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">
               Nerdion Systems turns fragmented administrative, program, geospatial, and economic datasets into interoperable decision-support systems that support planning, implementation tracking, and evaluation.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/our-work"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-accent-green text-white rounded-sm hover:bg-accent-green/90 transition-all shadow-sm group"
-              >
-                Explore Our Work <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+            <div className="flex flex-wrap gap-4 mb-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-green text-accent-green rounded-sm hover:bg-hover transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0433D3] text-white text-[15px] font-medium rounded-sm hover:bg-[#032BA1] transition-all shadow-sm"
               >
-                Talk to Us
+                WORK WITH US <ArrowRight className="w-4 h-4" />
               </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center px-8 py-4 border border-[#0433D3] text-[#0433D3] text-[15px] font-medium rounded-sm hover:bg-[#0433D3]/5 transition-all"
+              >
+                OUR SERVICES
+              </Link>
+            </div>
+
+            <div className="flex items-center gap-6 overflow-hidden max-w-2xl">
+              <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest shrink-0">
+                Trusted By
+              </span>
+              <div className="relative flex-1 overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-12 after:bg-gradient-to-l after:from-background after:to-transparent">
+                <div className="flex gap-8 items-center whitespace-nowrap animate-[marquee-rtl_25s_linear_infinite] hover:[animation-play-state:paused] w-max">
+                  {/* First set of logos */}
+                  <div className="flex shrink-0 items-center justify-around gap-12 min-w-full">
+                    {[
+                      { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
+                      { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
+                      { name: "MTN", logo: "/logos/mtn_logo.png" },
+                      { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
+                      { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
+                      { name: "CalBank", logo: "/logos/calbank_logo.png" },
+                      { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
+                    ].map((org, index) => (
+                      <div key={`${org.name}-1-${index}`} className="flex items-center justify-center shrink-0">
+                        <Image
+                          src={org.logo}
+                          alt={`${org.name} logo`}
+                          width={100}
+                          height={40}
+                          className="object-contain h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {/* Second set of logos */}
+                  <div className="flex shrink-0 items-center justify-around gap-12 min-w-full">
+                    {[
+                      { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
+                      { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
+                      { name: "MTN", logo: "/logos/mtn_logo.png" },
+                      { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
+                      { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
+                      { name: "CalBank", logo: "/logos/calbank_logo.png" },
+                      { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
+                    ].map((org, index) => (
+                      <div key={`${org.name}-2-${index}`} className="flex items-center justify-center shrink-0">
+                        <Image
+                          src={org.logo}
+                          alt={`${org.name} logo`}
+                          width={100}
+                          height={40}
+                          className="object-contain h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="hidden lg:block animate-in stagger-2">
@@ -69,113 +124,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted By Bar */}
-      <section className="bg-footer py-16 border-y border-border-warm animate-in">
-        <div className="max-w-[1440px] mx-auto">
-          <p className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] text-center mb-10 px-6">
-            Trusted by organizations shaping the world
-          </p>
-
-          <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-footer before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-footer after:to-transparent">
-            <div className="flex animate-marquee-ltr gap-4 whitespace-nowrap">
-              {/* First Set of Logos */}
-              <div className="flex shrink-0 items-center justify-around gap-4 min-w-full">
-                {[
-                  { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
-                  { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
-                  { name: "MTN", logo: "/logos/mtn_logo.png" },
-                  { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
-                  { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
-                  { name: "CalBank", logo: "/logos/calbank_logo.png" },
-                  { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
-                ].map((org, index) => (
-                  <div key={`${org.name}-1-${index}`} className="flex items-center justify-center shrink-0">
-                    <Image
-                      src={org.logo}
-                      alt={`${org.name} logo`}
-                      width={120}
-                      height={60}
-                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Second Set of Logos (Duplicate for seamless loop) */}
-              <div className="flex shrink-0 items-center justify-around gap-4 min-w-full">
-                {[
-                  { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
-                  { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
-                  { name: "MTN", logo: "/logos/mtn_logo.png" },
-                  { name: "Eco Africa Network", logo: "/logos/eco_africa_logo.png" },
-                  { name: "Ghana Water Company Limited", logo: "/logos/ghanawater_logo.png" },
-                  { name: "CalBank", logo: "/logos/calbank_logo.png" },
-                  { name: "AirtelTigo", logo: "/logos/airteltigo_logo.png" },
-                ].map((org, index) => (
-                  <div key={`${org.name}-2-${index}`} className="flex items-center justify-center shrink-0">
-                    <Image
-                      src={org.logo}
-                      alt={`${org.name} logo`}
-                      width={120}
-                      height={60}
-                      className="object-contain h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Practice Areas Section */}
+      {/* Practice Areas Section */ }
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="mb-20 animate-in">
-          <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Practice Areas</p>
+          <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Practice Areas</p>
           <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
-            Five practice areas. One unified data foundation.
+            Four practice areas. One unified data foundation.
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
             We focus on turning fragmented administrative, programme, geospatial, economic and financial datasets into interoperable systems.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {[
             {
               num: "01",
-              icon: Database,
-              title: "Data Analytics",
-              text: "Data engineering, interoperable data models, indicator systems, and automation of reporting workflows.",
-              tags: ["Data Modeling", "Pipelines", "BI"]
+              icon: Code2,
+              title: "Product Engineering & Design",
+              text: "Production software engineered across every layer of the stack - frontend, backend, infrastructure, and design.",
+              tags: ["Mobile App", "Web App", "UI/UX", "Backend"]
             },
             {
               num: "02",
-              icon: Activity,
-              title: "Health",
-              text: "Health financing analytics, expenditure tracking, health sector performance intelligence, and facility-level monitoring.",
-              tags: ["M&E", "Financing", "Expenditure"]
+              icon: BrainCircuit,
+              title: "Machine Learning & AI",
+              text: "Production ML systems, predictive analytics, computer vision, and personalized recommendation engines.",
+              tags: ["Predictive Analytics", "Computer Vision", "AI Agents"]
             },
             {
               num: "03",
-              icon: Sprout,
-              title: "Agriculture",
-              text: "Programme targeting tools, farmer and value-chain delivery analytics, resilience risk, and geospatial intelligence.",
-              tags: ["Farmer Data", "Geospatial", "Risk"]
+              icon: Database,
+              title: "Data Engineering & Analytics",
+              text: "Algorithmic builds data platforms, analytics systems, and infrastructure end-to-end with one senior team.",
+              tags: ["Analytics", "BI", "Infrastructure"]
             },
             {
               num: "04",
-              icon: Globe,
-              title: "Sustainability & Climate",
-              text: "NDC implementation tracking, MRV support, climate finance mapping, and geospatial exposure intelligence.",
-              tags: ["Climate Finance", "MRV", "NDC"]
-            },
-            {
-              num: "05",
-              icon: Coins,
-              title: "Finance",
-              text: "Public and development finance analytics, budget execution intelligence, investment pipeline, and financing scenarios.",
-              tags: ["Public Finance", "Budgets", "Investment"]
+              icon: LineChart,
+              title: "Strategy & Advisory",
+              text: "Technical certainty and independent technical assessments for investors, acquirers, and founders.",
+              tags: ["AI Readiness", "Feasibility", "Due Diligence"]
             },
           ].map((item, idx) => (
             <div key={idx} className="bg-white border border-border-warm p-10 hover:border-accent-green transition-all group animate-in flex flex-col justify-between" style={{ animationDelay: `${0.2 + idx * 0.1}s` }}>
@@ -202,7 +191,7 @@ export default function Home() {
       {/* Delivery Model Section */}
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32 border-t border-border-warm animate-in">
         <div className="mb-20">
-          <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Delivery Model</p>
+          <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Delivery Model</p>
           <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
             Data and systems as delivery infrastructure
           </h2>
@@ -281,7 +270,7 @@ export default function Home() {
       <section className="bg-dark-bg py-24 lg:py-32 text-white">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="mb-20 animate-in">
-            <p className="font-mono text-[10px] text-accent-gold uppercase tracking-widest mb-4">Our Process</p>
+            <p className="font-mono text-[10px] text-accent-gold uppercase mb-4">Our Process</p>
             <h2 className="font-display text-5xl lg:text-6xl mb-6">How we work</h2>
           </div>
 
@@ -311,7 +300,7 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="flex justify-between items-end mb-16 animate-in">
           <div>
-            <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4">Featured Work</p>
+            <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Featured Work</p>
             <h2 className="font-display text-5xl lg:text-6xl text-text-primary">Recent projects</h2>
           </div>
           <Link href="/our-work" className="text-sm font-mono text-accent-green hover:underline mb-2">
@@ -319,53 +308,22 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-8">
-          {/* Large Featured Card */}
-          <Link href="/case-study/ocha" className="group bg-white border border-border-warm hover:border-accent-green transition-all overflow-hidden animate-in">
-            <div className="grid lg:grid-cols-2">
-              <div className="p-10 lg:p-16">
-                <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4">UN OCHA</p>
-                <h3 className="font-display text-4xl text-text-primary mb-6 group-hover:text-accent-green transition-colors">
-                  Humanitarian Crisis Early Warning System
-                </h3>
-                <p className="text-text-secondary mb-8 leading-relaxed">
-                  A multi-country platform consolidating 14 real-time data feeds to provide actionable early warnings 4–6 weeks ahead of crises.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {["Real-time", "Predictive", "Multi-source"].map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-hover text-[10px] font-mono text-text-secondary rounded-full">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="inline-block px-4 py-2 bg-accent-gold text-white text-xs font-mono rounded-sm">
-                  4–6 week early lead time
-                </div>
-              </div>
-              <div className="bg-hover/50 flex items-center justify-center p-12">
-                <div className="w-full aspect-video bg-white border border-border-warm shadow-sm flex items-center justify-center">
-                  <BarChart3 className="w-24 h-24 text-accent-green opacity-20" />
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* Two smaller cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
             {[
-              { client: "ECOWAS", title: "Regional MEAL Platform", text: "15-country system tracking 340+ indicators with automated donor reporting.", outcome: "70% time saved", href: "/case-study/ecowas" },
-              { client: "AfDB", title: "Investment Portfolio Tracker", text: "Real-time dashboard tracking $2.4B in infrastructure across 18 nations.", outcome: "$2.4B tracked", href: "/case-study/afdb" }
+              { client: "African Renaissance Trust (ART)", title: "Health Financing Insights", text: "Interactive analytics platform mapping domestic resources and benchmarking sovereign performances.", outcome: "Sovereign benchmarking", href: "/case-study/health-financing-dashboard" },
+              { client: "African Union Commission (AUC)", title: "African Debt Monitoring Mechanism", text: "A continental reference registry for public finance macro-surveillance and risk early warning.", outcome: "Macro surveillance", href: "/case-study/admm" }
             ].map((project, idx) => (
-              <Link key={idx} href={project.href} className="group bg-white border border-border-warm p-10 hover:border-accent-green transition-all animate-in" style={{ animationDelay: `${0.1 * idx}s` }}>
-                <p className="font-mono text-[10px] text-accent-green uppercase tracking-widest mb-4">{project.client}</p>
-                <h3 className="font-display text-2xl text-text-primary mb-4 group-hover:text-accent-green transition-colors">{project.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed mb-8">{project.text}</p>
-                <div className="inline-block px-3 py-1 bg-accent-gold text-white text-[10px] font-mono rounded-sm">
+              <Link key={idx} href={project.href} className="group bg-white border border-border-warm p-10 hover:border-accent-green transition-all animate-in flex flex-col justify-between" style={{ animationDelay: `${0.1 * idx}s` }}>
+                <div>
+                    <p className="text-[11px] text-accent-green uppercase tracking-wide font-medium mb-4">{project.client}</p>
+                    <h3 className="font-display text-2xl text-text-primary mb-4 group-hover:text-accent-green transition-colors">{project.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed mb-8">{project.text}</p>
+                </div>
+                <div className="inline-block px-3 py-1 bg-accent-gold/10 border border-accent-gold/20 text-accent-gold text-[10px] font-semibold rounded-sm self-start">
                   {project.outcome}
                 </div>
               </Link>
             ))}
-          </div>
         </div>
       </section>
 

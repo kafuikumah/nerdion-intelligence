@@ -8,7 +8,7 @@ export default function EducationTrackingCaseStudy() {
         <div className="bg-background pb-24 lg:pb-32">
             {/* Hero / Header */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-12">
+                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase mb-12">
                     <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
                     <span>/</span>
                     <Link href="/our-work" className="hover:text-accent-green transition-colors">Our Work</Link>
@@ -18,7 +18,7 @@ export default function EducationTrackingCaseStudy() {
 
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 animate-in">
                     <div className="max-w-4xl">
-                        <p className="font-mono text-accent-green text-xs uppercase tracking-[0.3em] mb-4">Case Study: Monitoring & Evaluation Systems</p>
+                        <p className="font-mono text-accent-green text-xs uppercase mb-4">Case Study: Monitoring & Evaluation Systems</p>
                         <h1 className="font-display text-5xl lg:text-7xl text-text-primary tracking-tight leading-tight">
                             Education Outcomes Tracking System.
                         </h1>
@@ -38,7 +38,7 @@ export default function EducationTrackingCaseStudy() {
                         </div>
                         <div>
                             <p className="font-display text-2xl text-text-primary font-bold">240 Centers</p>
-                            <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest">Rural Coverage</p>
+                            <p className="text-[10px] text-text-secondary font-mono uppercase">Rural Coverage</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-6 md:border-l border-border-warm md:pl-8">
@@ -47,7 +47,7 @@ export default function EducationTrackingCaseStudy() {
                         </div>
                         <div>
                             <p className="font-display text-2xl text-text-primary font-bold">Real-time M&E</p>
-                            <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest">Attendance & Literacy</p>
+                            <p className="text-[10px] text-text-secondary font-mono uppercase">Attendance & Literacy</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-6 md:border-l border-border-warm md:pl-8">
@@ -56,7 +56,7 @@ export default function EducationTrackingCaseStudy() {
                         </div>
                         <div>
                             <p className="font-display text-2xl text-text-primary font-bold">Measurable Growth</p>
-                            <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest">Program Impact</p>
+                            <p className="text-[10px] text-text-secondary font-mono uppercase">Program Impact</p>
                         </div>
                     </div>
                 </div>
@@ -88,21 +88,21 @@ export default function EducationTrackingCaseStudy() {
 
                 <div className="lg:col-span-4 animate-in stagger-3">
                     <div className="bg-white border border-border-warm p-10 sticky top-32">
-                        <h4 className="font-mono text-[10px] text-text-secondary uppercase tracking-[0.4em] mb-10 border-b border-border-warm pb-4">
+                        <h4 className="font-mono text-[10px] text-text-secondary uppercase mb-10 border-b border-border-warm pb-4">
                             Project Details
                         </h4>
 
                         <div className="space-y-8">
                             <div>
-                                <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest mb-1">Client Type</p>
+                                <p className="text-[10px] text-text-secondary font-mono uppercase mb-1">Client Type</p>
                                 <p className="text-sm font-semibold text-text-primary">Global Development Foundation</p>
                             </div>
                             <div>
-                                <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest mb-1">Scope</p>
+                                <p className="text-[10px] text-text-secondary font-mono uppercase mb-1">Scope</p>
                                 <p className="text-sm font-semibold text-text-primary">240 Rural Learning Centers</p>
                             </div>
                             <div>
-                                <p className="text-[10px] text-text-secondary font-mono uppercase tracking-widest mb-1">Services</p>
+                                <p className="text-[10px] text-text-secondary font-mono uppercase mb-1">Services</p>
                                 <div className="flex flex-wrap gap-2 mt-2">
                                     {["Monitoring & Evaluation", "Offline-First Mobile", "Outcome Dashboards"].map(s => (
                                         <span key={s} className="px-3 py-1 bg-hover text-[10px] font-mono text-text-secondary rounded-sm">
@@ -124,7 +124,7 @@ export default function EducationTrackingCaseStudy() {
 
             {/* Bottom CTA */}
             <section className="max-w-[1440px] mx-auto px-6 lg:px-12 mt-24">
-                <Link href="/our-work" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase tracking-widest transition-colors group">
+                <Link href="/our-work" className="inline-flex items-center gap-3 text-text-secondary hover:text-accent-green font-mono text-xs uppercase transition-colors group">
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to All Case Studies
                 </Link>
             </section>

@@ -26,27 +26,28 @@ export default function About() {
     return (
         <div className="bg-background pb-24 lg:pb-32">
             {/* Hero */}
-            <section id="story" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32 scroll-mt-24">
-                <nav className="flex gap-2 text-xs font-mono text-text-secondary uppercase tracking-widest mb-8">
-                    <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
-                    <span>/</span>
-                    <span className="text-text-primary">About</span>
-                </nav>
-
-                <div className="grid lg:grid-cols-2 gap-16 items-center animate-in">
+            <section id="story" className="relative w-full h-[60vh] min-h-[500px] flex flex-col justify-end px-6 lg:px-12 py-16 lg:py-24 bg-cover bg-center scroll-mt-24 mb-16 lg:mb-24" style={{ backgroundImage: "url('/hero_about.png')" }}>
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/60 z-0"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full flex flex-col justify-end">
                     <div>
-                        <h1 className="font-display text-6xl lg:text-7xl text-text-primary mb-8 tracking-tight">
+                        <nav className="flex gap-2 text-xs font-mono text-gray-300 uppercase mb-8">
+                            <Link href="/" className="hover:text-accent-green transition-colors">Home</Link>
+                            <span>/</span>
+                            <span className="text-white">About</span>
+                        </nav>
+                        <h1 className="font-display text-5xl lg:text-7xl text-white mb-6 max-w-4xl tracking-tight animate-in">
                             Founded in Accra. <br />Built for the world.
                         </h1>
-                        <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-                            Nerdion Systems is a technology company developing specialized tools and data analytics platforms for development agencies, international NGOs, and social impact delivery partners.
+                        <p className="text-lg text-gray-300 max-w-2xl leading-relaxed animate-in stagger-1 pb-12">
+                            Nerdion Systems is a technology company developing tools, insight platforms, data analytics, and specialised software for development agencies, international NGOs, and social impact delivery partners.
                         </p>
                     </div>
-                    <div className="bg-footer p-12 lg:p-24 flex items-center justify-center relative overflow-hidden group">
-                        <div className="font-display text-[200px] lg:text-[240px] font-black text-white/50 leading-none group-hover:scale-110 transition-transform duration-700 select-none">
-                            2020
-                        </div>
-                        <div className="absolute inset-0 bg-accent-green/5 mix-blend-multiply"></div>
+
+                    <div className="mt-8">
+                        <p className="font-display text-xl lg:text-2xl text-white/90">A small team. Serious engineering.</p>
                     </div>
                 </div>
             </section>
@@ -54,7 +55,7 @@ export default function About() {
             {/* TECH Values Section */}
             <section id="values" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in scroll-mt-24">
                 <div className="mb-16">
-                    <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Our Values</p>
+                    <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Our Values</p>
                     <h2 className="font-display text-4xl lg:text-5xl text-text-primary">Operating Values (TECH)</h2>
                 </div>
 
@@ -98,7 +99,7 @@ export default function About() {
             {/* Leadership Section */}
             <section id="team" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in scroll-mt-24">
                 <div className="mb-16">
-                    <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Leadership</p>
+                    <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Leadership</p>
                     <h2 className="font-display text-4xl lg:text-5xl text-text-primary">Executive Committee</h2>
                 </div>
 
@@ -129,10 +130,10 @@ export default function About() {
                                     {member.initials}
                                 </div>
                                 <h3 className="font-display text-2xl text-text-primary mb-1">{member.name}</h3>
-                                <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest mb-6">{member.role}</p>
+                                <p className="font-mono text-[10px] text-text-secondary uppercase mb-6">{member.role}</p>
                             </div>
                             <div className="space-y-2 mt-6 pt-6 border-t border-border-warm/50">
-                                <p className="font-mono text-[9px] text-text-secondary uppercase tracking-widest mb-2">Core Mandate:</p>
+                                <p className="font-mono text-[9px] text-text-secondary uppercase mb-2">Core Mandate:</p>
                                 <div className="flex flex-wrap gap-1.5">
                                     {member.focus.map((item, fIdx) => (
                                         <span key={fIdx} className="px-2 py-0.5 bg-background border border-border-warm text-[9px] text-text-secondary font-mono rounded-sm">
@@ -195,7 +196,7 @@ export default function About() {
                                         {member.initials}
                                     </div>
                                     <h3 className="font-display text-xl text-text-primary mb-1">{member.name}</h3>
-                                    <p className="font-mono text-[9px] text-text-secondary uppercase tracking-widest mb-4">{member.role}</p>
+                                    <p className="font-mono text-[9px] text-text-secondary uppercase mb-4">{member.role}</p>
                                 </div>
                                 <div className="space-y-2 mt-4 pt-4 border-t border-border-warm/50">
                                     <div className="flex flex-wrap gap-1">
@@ -215,7 +216,7 @@ export default function About() {
             {/* Corporate Structure Grid */}
             <section id="structure" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in scroll-mt-24">
                 <div className="mb-16">
-                    <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Divisions</p>
+                    <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Divisions</p>
                     <h2 className="font-display text-4xl lg:text-5xl text-text-primary">Technical Expert Divisions</h2>
                 </div>
 
@@ -243,7 +244,7 @@ export default function About() {
             <section id="approach" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in scroll-mt-24">
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
                     <div>
-                        <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Our Engagement</p>
+                        <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Our Engagement</p>
                         <h2 className="font-display text-4xl lg:text-5xl text-text-primary mb-8 leading-tight">
                             Co-creation and managed technical support
                         </h2>
@@ -275,7 +276,7 @@ export default function About() {
             {/* Partnerships Section */}
             <section id="partners" className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 border-t border-border-warm animate-in scroll-mt-24">
                 <div className="mb-16">
-                    <p className="font-mono text-[10px] text-accent-green uppercase tracking-[0.4em] mb-4">Partnerships</p>
+                    <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Partnerships</p>
                     <h2 className="font-display text-4xl lg:text-5xl text-text-primary">Trusted by international and regional allies</h2>
                 </div>
 

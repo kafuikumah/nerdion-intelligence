@@ -42,13 +42,13 @@ export function Footer() {
 
                     {/* Column 2: Sectors & Solutions */}
                     <div>
-                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase tracking-[0.3em] mb-6">Solutions</h4>
+                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase mb-6">Solutions</h4>
                         <ul className="space-y-3.5 text-xs">
                             {[
-                                { label: "Multilaterals & Agencies", href: "/solutions#multilaterals" },
-                                { label: "INGOs & Partners", href: "/solutions#ingos" },
-                                { label: "Regional Intergovernmental", href: "/solutions#regional-bodies" },
-                                { label: "Social Impact & Research", href: "/solutions#research-teams" }
+                                { label: "Multilaterals & Agencies", href: "/how-we-work#multilaterals" },
+                                { label: "INGOs & Partners", href: "/how-we-work#ingos" },
+                                { label: "Regional Intergovernmental", href: "/how-we-work#regional-bodies" },
+                                { label: "Social Impact & Research", href: "/how-we-work#research-teams" }
                             ].map((link) => (
                                 <li key={link.label}>
                                     <Link href={link.href} className="hover:text-accent-green transition-colors">
@@ -61,14 +61,13 @@ export function Footer() {
 
                     {/* Column 3: Practice Areas */}
                     <div>
-                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase tracking-[0.3em] mb-6">Practice Divisions</h4>
+                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase mb-6">Practice Divisions</h4>
                         <ul className="space-y-3.5 text-xs">
                             {[
-                                { label: "Data Science & Analytics", href: "/what-we-do#data-analytics" },
-                                { label: "Health Systems", href: "/what-we-do#health" },
-                                { label: "Agriculture & Value Chains", href: "/what-we-do#agriculture" },
-                                { label: "Sustainability & Climate", href: "/what-we-do#climate" },
-                                { label: "Development Finance", href: "/what-we-do#finance" }
+                                { label: "Product Engineering & Design", href: "/services#product-engineering" },
+                                { label: "Data Engineering & Analytics", href: "/services#data-engineering" },
+                                { label: "Machine Learning & AI Systems", href: "/services#ml-ai" },
+                                { label: "Strategy & Advisory", href: "/services#strategy" }
                             ].map((link) => (
                                 <li key={link.label}>
                                     <Link href={link.href} className="hover:text-accent-green transition-colors">
@@ -81,7 +80,7 @@ export function Footer() {
 
                     {/* Column 4: Corporate & Governance */}
                     <div>
-                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase tracking-[0.3em] mb-6">Corporate</h4>
+                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase mb-6">Corporate</h4>
                         <ul className="space-y-3.5 text-xs">
                             {[
                                 { label: "Our Story", href: "/about#story" },
@@ -102,7 +101,7 @@ export function Footer() {
 
                     {/* Column 5: Global Offices */}
                     <div>
-                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase tracking-[0.3em] mb-6">Global Offices</h4>
+                        <h4 className="font-mono text-[9px] text-[#38BDF8] uppercase mb-6">Global Offices</h4>
                         <div className="space-y-5 text-xs leading-relaxed text-[#94A3B8]/95">
                             <div>
                                 <p className="font-semibold text-white">Accra, Ghana (HQ)</p>
@@ -132,7 +131,7 @@ export function Footer() {
                 </div>
 
                 {/* Bottom Copyright Bar */}
-                <div className="border-t border-slate-900/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono tracking-wider">
+                <div className="border-t border-slate-900/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono">
                     <p className="uppercase">
                         © 2026 NERDION SYSTEMS. ALL RIGHTS RESERVED.
                     </p>
