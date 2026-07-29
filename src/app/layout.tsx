@@ -27,10 +27,6 @@ export const metadata: Metadata = {
   title: "Nerdion Systems — Intelligence for Global Impact",
   description:
     "Nerdion Systems builds decision-support tools, monitoring platforms, and data systems for international development organizations. Based in Accra and Manchester.",
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
 };
 
 export default function RootLayout({
