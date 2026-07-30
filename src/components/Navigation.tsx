@@ -22,7 +22,7 @@ const navItems = [
             { title: "ATLAS BY NERDION", description: "Advanced Transparency, Learning & Accountability System", href: "/resources/atlas" },
         ]
     },
-    { label: "CONTACT", href: "/contact" }
+    { label: "GET IN TOUCH", href: "/contact", isCTA: true }
 ];
 
 export function Navigation() {
@@ -49,59 +49,74 @@ export function Navigation() {
                         alt="Nerdion Systems"
                         width={180}
                         height={40}
-                        className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                        className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
                         priority
                     />
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden lg:flex items-center gap-10">
-                    {navItems.map((item, idx) => (
-                        <div
-                            key={item.label}
-                            className="relative group py-6"
-                            onMouseEnter={() => setActiveMega(idx)}
-                            onMouseLeave={() => setActiveMega(null)}
-                        >
-                            <Link
-                                href={item.href}
-                                className={`flex items-center gap-1.5 text-[12px] tracking-wide font-medium transition-colors ${activeMega === idx ? "text-gray-400" : "text-text-primary hover:text-gray-600"}`}
-                            >
-                                {item.label}
-                                {item.megaMenu && (
-                                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMega === idx ? "rotate-180" : ""}`} />
-                                )}
-                            </Link>
-
-                            {/* Dropdown Menu */}
-                            {item.megaMenu && (
-                                <div
-                                    className={`absolute top-full right-0 w-[420px] bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-200 origin-top overflow-hidden rounded-sm ${activeMega === idx ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                                        }`}
-                                >
-                                    <div className="flex flex-col">
-                                        {item.megaMenu.map((sub, i) => (
-                                            <Link
-                                                key={sub.title}
-                                                href={sub.href}
-                                                className={`block px-8 py-6 group/item ${i !== item.megaMenu.length - 1 ? 'border-b border-gray-100' : ''}`}
-                                            >
-                                                <div className="inline-block relative mb-1.5">
-                                                    <h4 className="text-[13px] font-semibold text-text-primary uppercase group-hover/item:text-accent-green transition-colors">
-                                                        {sub.title}
-                                                    </h4>
-                                                    <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-accent-green transition-all duration-300 group-hover/item:w-full"></span>
-                                                </div>
-                                                <p className="text-[13px] text-gray-500 leading-snug">
-                                                    {sub.description}
-                                                </p>
-                                            </Link>
-                                        ))}
-                                    </div>
+                <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+                    {navItems.map((item, idx) => {
+                        if (item.isCTA) {
+                            return (
+                                <div key={item.label} className="pl-2">
+                                    <Link
+                                        href={item.href}
+                                        className="inline-flex items-center justify-center px-6 py-3 bg-[#0433D3] text-white text-[12px] font-medium tracking-wide uppercase hover:bg-[#032BA1] transition-all rounded-sm"
+                                    >
+                                        {item.label}
+                                    </Link>
                                 </div>
-                            )}
-                        </div>
-                    ))}
+                            );
+                        }
+
+                        return (
+                            <div
+                                key={item.label}
+                                className="relative group py-6"
+                                onMouseEnter={() => setActiveMega(idx)}
+                                onMouseLeave={() => setActiveMega(null)}
+                            >
+                                <Link
+                                    href={item.href}
+                                    className={`flex items-center gap-1.5 text-[11px] xl:text-[12px] tracking-[0.05em] font-medium transition-colors ${activeMega === idx ? "text-gray-400" : "text-text-primary hover:text-gray-600"}`}
+                                >
+                                    {item.label}
+                                    {item.megaMenu && (
+                                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === idx ? "rotate-180" : ""}`} />
+                                    )}
+                                </Link>
+
+                                {/* Dropdown Menu */}
+                                {item.megaMenu && (
+                                    <div
+                                        className={`absolute top-full right-0 w-[420px] bg-white border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-200 origin-top overflow-hidden rounded-sm ${activeMega === idx ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                                            }`}
+                                    >
+                                        <div className="flex flex-col">
+                                            {item.megaMenu.map((sub, i) => (
+                                                <Link
+                                                    key={sub.title}
+                                                    href={sub.href}
+                                                    className={`block px-8 py-6 group/item ${i !== item.megaMenu.length - 1 ? 'border-b border-gray-100' : ''}`}
+                                                >
+                                                    <div className="inline-block relative mb-1.5">
+                                                        <h4 className="text-[13px] font-semibold text-text-primary uppercase group-hover/item:text-[#0433D3] transition-colors">
+                                                            {sub.title}
+                                                        </h4>
+                                                        <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-[#0433D3] transition-all duration-300 group-hover/item:w-full"></span>
+                                                    </div>
+                                                    <p className="text-[13px] text-gray-500 leading-snug">
+                                                        {sub.description}
+                                                    </p>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
 
                 {/* Mobile Toggle */}
@@ -120,10 +135,10 @@ export function Navigation() {
             >
                 <div className="flex flex-col p-8 gap-6 h-full overflow-y-auto">
                     {navItems.map((item) => (
-                        <div key={item.label} className="border-b border-border-warm pb-4">
+                        <div key={item.label} className={`border-b border-border-warm pb-4 ${item.isCTA ? 'border-none pt-4' : ''}`}>
                             <Link
                                 href={item.href}
-                                className="text-2xl font-display text-text-primary mb-4 block uppercase"
+                                className={`text-xl font-display mb-4 block uppercase ${item.isCTA ? 'inline-flex items-center justify-center px-6 py-4 bg-[#0433D3] text-white text-[13px] font-medium tracking-wide rounded-sm w-full' : 'text-text-primary'}`}
                                 onClick={() => setIsOpen(false)}
                             >
                                 {item.label}

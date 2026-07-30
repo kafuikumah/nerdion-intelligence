@@ -37,11 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${dmSans.variable} ${GeistSans.variable} antialiased font-body font-light`}
+        className={`${playfair.variable} ${dmSans.variable} ${GeistSans.variable} antialiased font-body font-light overflow-x-hidden`}
       >
         <ScrollProgress />
         <Navigation />
-        <main className="pt-24 min-h-screen">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

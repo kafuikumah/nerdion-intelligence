@@ -24,43 +24,44 @@ import { GlassmorphicIcon } from "@/components/GlassmorphicIcon";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-in stagger-1">
-            <p className="font-mono text-[10px] text-accent-green uppercase mb-6">
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-12 md:py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="animate-in stagger-1 min-w-0">
+            <p className="font-mono text-[10px] text-accent-green uppercase mb-4 md:mb-6">
               Accra · Manchester
             </p>
-            <h1 className="font-display text-6xl lg:text-[88px] leading-[1.05] text-text-primary mb-8 tracking-tight">
+            <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-[88px] leading-[1.15] lg:leading-[1.05] text-text-primary mb-5 md:mb-6 lg:mb-8 tracking-tight break-words">
               Technology built for African development.
             </h1>
-            <p className="text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-text-secondary mb-8 lg:mb-10 leading-relaxed">
               Nerdion Systems turns fragmented administrative, program, geospatial, and economic datasets into interoperable decision-support systems that support planning, implementation tracking, and evaluation.
             </p>
-            <div className="flex flex-wrap gap-4 mb-16">
+
+            <div className="flex flex-row gap-3 sm:gap-4 mb-10 lg:mb-16">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0433D3] text-white text-[15px] font-medium rounded-sm hover:bg-[#032BA1] transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 bg-[#0433D3] text-white text-[12px] sm:text-[15px] font-medium rounded-sm hover:bg-[#032BA1] transition-all shadow-sm whitespace-nowrap"
               >
-                WORK WITH US <ArrowRight className="w-4 h-4" />
+                WORK WITH US <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 border border-[#0433D3] text-[#0433D3] text-[15px] font-medium rounded-sm hover:bg-[#0433D3]/5 transition-all"
+                className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 border border-[#0433D3] text-[#0433D3] text-[12px] sm:text-[15px] font-medium rounded-sm hover:bg-[#0433D3]/5 transition-all whitespace-nowrap"
               >
                 OUR SERVICES
               </Link>
             </div>
 
-            <div className="flex items-center gap-6 overflow-hidden max-w-2xl">
+            <div className="flex flex-col gap-3 min-w-0 mb-8 lg:mb-0">
               <span className="font-mono text-[10px] text-text-secondary uppercase tracking-widest shrink-0">
                 Trusted By
               </span>
-              <div className="relative flex-1 overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-12 after:bg-gradient-to-l after:from-background after:to-transparent">
-                <div className="flex gap-8 items-center whitespace-nowrap animate-[marquee-rtl_25s_linear_infinite] hover:[animation-play-state:paused] w-max">
+              <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-8 md:before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-8 md:after:w-12 after:bg-gradient-to-l after:from-background after:to-transparent">
+                <div className="flex gap-6 sm:gap-8 items-center whitespace-nowrap animate-[marquee-rtl_25s_linear_infinite] hover:[animation-play-state:paused] w-max">
                   {/* First set of logos */}
-                  <div className="flex shrink-0 items-center justify-around gap-12 min-w-full">
+                  <div className="flex shrink-0 items-center justify-around gap-6 sm:gap-8 md:gap-12">
                     {[
                       { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
                       { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
@@ -74,15 +75,15 @@ export default function Home() {
                         <Image
                           src={org.logo}
                           alt={`${org.name} logo`}
-                          width={100}
-                          height={40}
-                          className="object-contain h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                          width={80}
+                          height={32}
+                          className="object-contain h-5 sm:h-6 md:h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                         />
                       </div>
                     ))}
                   </div>
                   {/* Second set of logos */}
-                  <div className="flex shrink-0 items-center justify-around gap-12 min-w-full">
+                  <div className="flex shrink-0 items-center justify-around gap-6 sm:gap-8 md:gap-12">
                     {[
                       { name: "African Union Commission", logo: "/logos/african_union_logo.png" },
                       { name: "African Renaissance Trust", logo: "/logos/african_renaissance_logo.png" },
@@ -96,9 +97,9 @@ export default function Home() {
                         <Image
                           src={org.logo}
                           alt={`${org.name} logo`}
-                          width={100}
-                          height={40}
-                          className="object-contain h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                          width={80}
+                          height={32}
+                          className="object-contain h-5 sm:h-6 md:h-7 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                         />
                       </div>
                     ))}
@@ -106,7 +107,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Hero Image — mobile only, after Trusted By */}
+            <div className="lg:hidden mt-10 w-full">
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src="/Nerdion-hro-image.png"
+                  alt="Nerdion Systems Platform Showcase"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </div>
           </div>
+          {/* Hero Image — desktop only, right column */}
           <div className="hidden lg:block animate-in stagger-2">
             <div className="relative aspect-square w-full bg-transparent overflow-hidden group transition-all duration-300">
               <div className="relative w-full h-full">
@@ -115,7 +131,7 @@ export default function Home() {
                   alt="Nerdion Systems Platform Showcase"
                   fill
                   className="object-contain transition-transform duration-75 group-hover:scale-[1.02]"
-                  sizes="(max-w-720px) 100vw, 50vw"
+                  sizes="50vw"
                   priority
                 />
               </div>
@@ -128,7 +144,7 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="mb-20 animate-in">
           <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Practice Areas</p>
-          <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
+          <h2 className="font-display text-4xl lg:text-6xl text-text-primary mb-6">
             Four practice areas. One unified data foundation.
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
@@ -192,7 +208,7 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32 border-t border-border-warm animate-in">
         <div className="mb-20">
           <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Delivery Model</p>
-          <h2 className="font-display text-5xl lg:text-6xl text-text-primary mb-6">
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-text-primary mb-6">
             Data and systems as delivery infrastructure
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl leading-relaxed">
@@ -271,10 +287,10 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="mb-20 animate-in">
             <p className="font-mono text-[10px] text-accent-gold uppercase mb-4">Our Process</p>
-            <h2 className="font-display text-5xl lg:text-6xl mb-6">How we work</h2>
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl mb-6">How we work</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
             {[
               { num: "01", title: "Discovery", icon: Search, text: "Context analysis, stakeholder interviews, data landscape assessment, and problem definition." },
               { num: "02", title: "Co-Design", icon: PenTool, text: "Collaborative definition of architecture, indicator frameworks, reporting, and governance model." },
@@ -298,12 +314,12 @@ export default function Home() {
 
       {/* Featured Work Section */}
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <div className="flex justify-between items-end mb-16 animate-in">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-16 animate-in">
           <div>
             <p className="font-mono text-[10px] text-accent-green uppercase mb-4">Featured Work</p>
-            <h2 className="font-display text-5xl lg:text-6xl text-text-primary">Recent projects</h2>
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-text-primary">Recent projects</h2>
           </div>
-          <Link href="/our-work" className="text-sm font-mono text-accent-green hover:underline mb-2">
+          <Link href="/our-work" className="text-sm font-mono text-accent-green hover:underline sm:mb-2">
             All Case Studies →
           </Link>
         </div>
@@ -330,7 +346,7 @@ export default function Home() {
       {/* Bottom CTA Band */}
       <section className="bg-hover/50 border-t border-accent-green py-24 lg:py-32">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center animate-in">
-          <h2 className="font-display text-5xl lg:text-7xl text-text-primary mb-8 max-w-4xl mx-auto leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl lg:text-7xl text-text-primary mb-8 max-w-4xl mx-auto leading-tight">
             Ready to make your data work for the world?
           </h2>
           <p className="text-lg text-text-secondary mb-12 max-w-2xl mx-auto">
