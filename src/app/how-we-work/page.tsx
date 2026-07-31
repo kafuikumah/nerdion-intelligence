@@ -83,7 +83,7 @@ export default function HowWeWork() {
             </section>
 
             {/* 6-Phase Process */}
-            <section className="bg-footer text-white py-24 lg:py-32 border-y border-border-warm">
+            <section className="bg-black text-white py-24 lg:py-32 border-y border-border-warm">
                 <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                     <div className="mb-16 lg:mb-24 animate-in">
                         <h2 className="font-display text-4xl lg:text-5xl tracking-tight mb-6">Our 6-Phase Process</h2>
