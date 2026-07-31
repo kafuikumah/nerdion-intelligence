@@ -31,10 +31,10 @@ export default function HowWeWork() {
                             <span className="text-white">How We Work</span>
                         </nav>
                         <h1 className="font-display text-5xl lg:text-7xl text-white mb-6 max-w-4xl tracking-tight animate-in">
-                            A practical bridge between software engineering & development practice.
+                            Bridging software engineering & development.
                         </h1>
                         <p className="text-lg text-gray-300 max-w-2xl leading-relaxed animate-in stagger-1 pb-12">
-                            We focus on turning fragmented administrative, programme, geospatial, economic and financial datasets into interoperable systems that support planning, implementation tracking, and evaluation.
+                            We transform fragmented data into interoperable systems for planning, tracking, and evaluation.
                         </p>
                     </div>
 
